@@ -23,7 +23,7 @@ function Readerprofileaccountinfo() {
  
 
   return (
-    <div>
+    <div className='col-8'>
             <div className='reader_profile_account_info' >
       <div className='reader_profile_account_info_details row' >
         <div className='col-7  reader_profile_account_info_fulldetails ' >
@@ -74,7 +74,7 @@ function Readerprofileaccountinfo() {
           </div>
 
           <div className='reader_profile_account_info_editbtn ' >
-            <Link to=''><button className='btn btn-primary' >Edit Profile</button></Link>
+            <Link to='/reader_editprofile'><button className='btn btn-primary' >Edit Profile</button></Link>
           </div>
         </div>
         <div className='col-5 reader_profile_account_info_image' >

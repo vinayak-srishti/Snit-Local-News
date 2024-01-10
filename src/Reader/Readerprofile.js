@@ -3,6 +3,9 @@ import "../Reader/Readerprofile.css"
 import Readerprofilesidebar from "./Readerprofilesidebar"
 import Readerprofileaccountinfo from './Readerprofileaccountinfo'
 import Readerpageroles from './Readerpageroles'
+import Readereditprofile from './Readereditprofile'
+import Readerprivicay from './Readerprivicay'
+import Readreabout from './Readreabout'
 
 function Readerprofile({data}) {
   return (
@@ -12,6 +15,12 @@ function Readerprofile({data}) {
             <Readerprofileaccountinfo className='Readerprofileaccountinfo'/>
         ):data === "pagerole" ?(
           <Readerpageroles />
+        ):data==="editprofile" ?(
+          <Readereditprofile/>
+        ):data=="readerprivacy" ?(
+          <Readerprivicay/>
+        ):data=="readerabout" ?(
+          <Readreabout/>
         ):
         ''}
     </div>

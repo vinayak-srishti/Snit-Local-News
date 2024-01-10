@@ -1,14 +1,10 @@
 import React from 'react'
-import "../Reader/Readernavafterlogin.css"
 import img from "../Assets/logo.png"
-import imgprofile from "../Assets/profileicon.png"
-import { Link } from 'react-router-dom'
 
-
-function Readernavafterlogin() {
+function Adminlognav() {
   return (
     <div>
-              <div class="container-fluid ">
+                              <div class="container-fluid ">
         <nav class="navbar navbar-expand-lg user_navbar ">
           <div class="container ">
             <a class="navbar-brand" href="#">
@@ -16,7 +12,7 @@ function Readernavafterlogin() {
             </a>
 
 
-            <form class="d-flex ms-5 user_nav_Search">
+            {/* <form class="d-flex ms-5 user_nav_Search">
               <input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search" />
 
             </form>
@@ -31,13 +27,13 @@ function Readernavafterlogin() {
 
 
                 <li class="nav-item">
-                  <a class="nav-link " href="./readerhomelogin" >Home</a>
+                  <a class="nav-link " href="/" >Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/readerpolitics">Politics</a>
+                  <a class="nav-link" href="#">Politics</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/readersports">Sports</a>
+                  <a class="nav-link" href="#">Sports</a>
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -53,7 +49,7 @@ function Readernavafterlogin() {
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">Others</a>
-                </li>
+                </li> */}
 
                 {/* <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -66,14 +62,14 @@ function Readernavafterlogin() {
                     <li> <a class="dropdown-item" href="#">Tech</a></li>
                   </ul>
                 </li> */}
-                <li class="nav-item">
-                 <Link to="/readerprofile_accountinfo">
+                {/* <li class="nav-item"> */}
+                 {/* <Link to="/readerlogin"> */}
                     {/* <button type="button" class="userpage_navbar_loginbtn">Login</button> */}
-                    <img src={imgprofile} alt='icon' width="30px" height="30px" style={{ borderRadius: '50%' }} />
-                    </Link>
-                </li>
-              </ul>
-            </div>
+                    {/* <img src={imgprofile} alt='icon' width="30px" height="30px" style={{ borderRadius: '50%' }} /> */}
+                    {/* </Link> */}
+                {/* </li> */}
+              {/* </ul> */}
+            {/* </div> */}
           </div>
         </nav>
       </div>
@@ -84,4 +80,4 @@ function Readernavafterlogin() {
   )
 }
 
-export default Readernavafterlogin
+export default Adminlognav

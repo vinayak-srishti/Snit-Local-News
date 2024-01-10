@@ -23,6 +23,7 @@ function ReaderLogin() {
         localStorage.setItem("readerid", result.data.data._id);
         alert("login Sucessfully...");
         navigate("/readerhomelogin")
+        window.location.reload();
       } else if (result.data.status==500) {
         // alert(result.data.msg);
           alert("password mismatch")

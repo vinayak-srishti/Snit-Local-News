@@ -7,7 +7,10 @@ import axiosInstance from '../BaseUrl'
 
 function Readerprofilesidebar() {
   const storedReaderId = localStorage.getItem("readerid");
+  const[readerid,setReaderid]=useState(null);
+
   const [data,setdata]=useState({})
+
 
   useEffect(()=>{
     axiosInstance.post(`/readerviewbyid/${storedReaderId}`)
@@ -22,8 +25,14 @@ function Readerprofilesidebar() {
   },[])
 
 console.log(storedReaderId);
+  // Clear the reader ID from local storage and update the state
+const handleLogout = () => {
+  localStorage.removeItem("readerid");
+  setReaderid(null);
+};
+
   return (
-    <div>
+    <div className='col-3'>
             <div className="reader_profile_sidebar">
       {/* <div className="reader_profile_sidebar_img mt-5">
         <Link to=''><img src={""} alt="profile_picture" /></Link>
@@ -128,7 +137,7 @@ console.log(storedReaderId);
           </div>
         </div>
         </Link>
-        <Link to='' >
+        <Link to='/reader_about' >
         <div className="reader_profile_sidebar_account_info">
           <div className="d-flex mt-2">
             <i class="ri-question-fill reader_profile_sidebar_icons"></i>
@@ -144,7 +153,7 @@ console.log(storedReaderId);
 
       </div>
       <div className="reader_profile_sidebar_padding ">
-        <Link to='' >
+        <Link to='/reader_privacy' >
         <div className="reader_profile_sidebar_account_info">
           <div className="d-flex mt-2">
             <i class="ri-error-warning-fill reader_profile_sidebar_icons"></i>
@@ -158,8 +167,8 @@ console.log(storedReaderId);
         </Link>
         
       </div>
-      <Link to='' ><div className="reader_profile_sidebar_logoybtn mt-4 mb-4">
-        <button className="btn btn-secondary">
+      <Link to='/' ><div className="reader_profile_sidebar_logoybtn mt-4 mb-4">
+        <button className="btn btn-secondary" onClick={handleLogout}>
           <i class="ri-logout-box-r-line"></i> logout
         </button>
       </div></Link>

@@ -1,0 +1,18 @@
+.admin_dashboard{
+    padding: 20px;
+}
+.admindashboard_h2{
+    font-size: 30px;
+    font-weight: bold;
+}
+.admin_dashboard_box{
+    width: 200px;
+    height: 200px;
+    background-color: rgb(218, 216, 216);
+    margin: 10px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.2);
+}
+#count{
+    text-align: center;
+}

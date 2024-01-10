@@ -23,6 +23,7 @@ function Readerhomecarousle() {
         if (!readerid) {
           setShowLoginModal(true);
         }
+        
       };
     
       const handleLoginModalClose = () => {

@@ -1,18 +1,17 @@
 import React from 'react'
-import "../Reader/Readerpoliticspage.css"
 import img from "../Assets/bunpic.png"
 
 
-function Readerpoliticspage() {
+function Readersports() {
   return (
     <div className='reader_politics container'>
-      <h1>Politics</h1>
+              <h1>Politics</h1>
     <div className='row'>
       <div className='col-md-5 readre_politics_image'>
         <img src={img} alt='images'/>
       </div>
       <div className='col-md-6 offset-md-1  reader_politics_text'>
-      <h2>"International Relations"</h2>
+      <h2>"A Game Changing Season"</h2>
       <p>Recently, there have been discussions about the evolving dynamics between major world powers. 
         The ongoing tensions and diplomatic maneuvers between the United States, China, and Russia have been
          at the forefront. Issues such as trade relations, geopolitical strategies, and responses to global challenges like climate change are shaping the narrative. It's a complex web of interactions that often involves a 
@@ -69,8 +68,9 @@ function Readerpoliticspage() {
       </div>
     </div>      
 
+
     </div>
   )
 }
 
-export default Readerpoliticspage
+export default Readersports

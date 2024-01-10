@@ -5,6 +5,7 @@ import axiosInstance from '../BaseUrl'
 
 
 function ContributorLogin() {
+  const navigate=useNavigate()
   const[login,setlogin]=useState("")
 
   const changehandleSubmit = (a) => {
@@ -17,8 +18,9 @@ function ContributorLogin() {
   .then((result) => {
     console.log("data entered", result);
     if (result.data.status == 200) {
-      // localStorage.setItem("readerid", result.data.data._id);
+      localStorage.setItem("contibuterid", result.data.data._id);
       alert("login Sucessfully...");
+      navigate("/contributer_home")
       // window.location.reload(false)
     } else if (result.data.status==500) {
       // alert(result.data.msg);
