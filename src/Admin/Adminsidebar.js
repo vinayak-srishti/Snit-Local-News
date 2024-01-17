@@ -21,7 +21,7 @@ function Adminsidebar() {
       </div> */}
       <hr />
       <div className="admin_profile_sidebar_padding ">
-        <Link to='' >
+        <Link to='/admin_dashboard' >
           <div className="admin_profile_sidebar_account_info">
             <div className="d-flex mt-2">
               <i class="ri-dashboard-line admin_profile_sidebar_icons"></i>
@@ -51,7 +51,7 @@ function Adminsidebar() {
       </div>
 
       <div className="admin_profile_sidebar_padding ">
-        <Link to='' >
+        <Link to='/admin_viewadvertiser' >
         <div className="admin_profile_sidebar_account_info">
           <div className="d-flex mt-2 ">
             <i class="ri-advertisement-fill admin_profile_sidebar_icons"></i>{" "}
@@ -66,7 +66,7 @@ function Adminsidebar() {
         
       </div>
       <div className="admin_profile_sidebar_padding ">
-        <Link to='' >
+        <Link to='/adminviewcontributer' >
         <div className="admin_profile_sidebar_account_info">
           <div className="d-flex mt-2">
             <i class="ri-file-user-fill admin_profile_sidebar_icons"></i>
@@ -125,7 +125,7 @@ function Adminsidebar() {
 
       </div>
       <div className="admin_profile_sidebar_padding ">
-        <Link to='' >
+        <Link to='/adminprivacy' >
         <div className="admin_profile_sidebar_account_info">
           <div className="d-flex mt-2">
             <i class="ri-error-warning-fill admin_profile_sidebar_icons"></i>
@@ -139,7 +139,7 @@ function Adminsidebar() {
         </Link>
         
       </div>
-      <Link to='' ><div className="admin_profile_sidebar_logoybtn mt-4 mb-4">
+      <Link to='/admin' ><div className="admin_profile_sidebar_logoybtn mt-4 mb-4">
         <button className="btn btn-secondary" >
           <i class="ri-logout-box-r-line"></i> logout
         </button>

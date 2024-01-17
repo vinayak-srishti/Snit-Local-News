@@ -55,7 +55,7 @@ const onchangefn=((e)=>{
 })
   return (
   
-            <div className='col-8'>
+            <div className='col-9 ' style={{marginLeft:"30px"}}>
             <div className='reader_editprofile_account_info' >
               <form onSubmit={submitfn}>
       <div className='reader_profile_account_info_details row' >

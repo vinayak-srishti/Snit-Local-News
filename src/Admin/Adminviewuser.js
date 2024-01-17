@@ -32,29 +32,32 @@ function Adminviewuser() {
                 <h4>Users</h4>
                 </div>  
                 <div className='col-6'>
-                  <h4>Users</h4>
+                  {/* <h4>Users</h4> */}
                 </div>  
             </div>
-            <div className='reader_viewuser_box row'>
-              <div className='reader_viewuser_content col'>
-              <p>Regno</p>
-              <p className='reader_viewuser_name'>Name</p>
-              <p className='reader_viewuser_status'>Status</p>
-              <p className='reader_viewuser_account'>Account Status</p>
-              <p className='reader_viewuser_activity'>Activity</p>
-              <p className='reader_viewuser_location'>Loction</p>
+            <div className='row'>
+            <div className='reader_viewuser_boxes '>
+              <div  style={{ display: 'flex' }}>
+              <p className='col-2'>Regno</p>
+              <p className='col-2'>Name</p>
+              <p className='col-2'>Status</p>
+              <p className='col-2'>Account Status</p>
+              <p className='col-4'>Loction</p>
               </div>
+            </div>
             </div>
             {data.length ? (
           data.map((a) => (
-            <Link to={"/admin_viewsingleuser/"+a._id }style={{textDecoration:'none', color: 'black' }}><div className='reader_viewuser_content col col reader_viewuser_box'> 
-                         <p>Regno</p>
-
-              <p className='reader_viewuser_name' >{a.firstname}</p>
-              <p className='reader_viewuser_status'>Status</p>
-              <p className='reader_viewuser_account'>account</p>
-              <p className='reader_viewuser_activity'>activity</p>
-              <p className='reader_viewuser_location'>location</p>
+            <Link to={"/admin_viewsingleuser/"+a._id }style={{textDecoration:'none', color: 'black' }}>
+              <div className='row'>
+              <div className='reader_viewuser_boxes ' style={{ display: 'flex' }}> 
+                         
+              <p className='col-2'>Regno</p>
+              <p className='col-2' >{a.firstname}</p>
+              <p className='col-2'>Status</p>
+              <p className='col-2'>account</p>
+              <p className='col-4'>{a.city},{a.street},{a.nationality}</p>
+            </div>
             </div></Link>
           ))
         ) : (

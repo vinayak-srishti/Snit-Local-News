@@ -2,6 +2,8 @@ import React from 'react'
 import "../Reader/Readerprofile.css"
 import Contributersidebar from './Contributersidebar'
 import Contributerviewprofile from './Contributerviewprofile'
+import Contributeraddnews from './Contributeraddnews'
+import Contributereditprofile from './Contributereditprofile'
 
 function Contributerprofile({data}) {
   return (
@@ -9,7 +11,10 @@ function Contributerprofile({data}) {
         <Contributersidebar/>
         {data === 'contributerviewprofile' ? (
             <Contributerviewprofile/>
-        ):''}
+        ):data=== 'contributereditprofile' ?(
+          <Contributereditprofile/>
+        ) :
+        ''}
     </div>
   )
 }

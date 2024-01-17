@@ -3,6 +3,7 @@ import {Link, useNavigate} from "react-router-dom"
 
 
 function AdminLogin() {
+  const navigate=useNavigate()
   const[admin,setadmin]=useState({email:"",password:""})
   
   const email="admin"
@@ -19,6 +20,7 @@ function AdminLogin() {
     if(email==admin.email){
       if(password==admin.password){
         alert("login successfully")
+        navigate("/admin_dashboard")
       }
       else{
         alert("password incorrect")

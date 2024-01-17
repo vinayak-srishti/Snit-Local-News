@@ -7,7 +7,7 @@
 }
 .admin_dashboard_box{
     width: 200px;
-    height: 200px;
+    height: 150px;
     background-color: rgb(218, 216, 216);
     margin: 10px;
     border-radius: 20px;
@@ -15,4 +15,32 @@
 }
 #count{
     text-align: center;
+}
+.admindashboard_users{
+    padding-left: 10px;
+    width: 870px;
+    height: 60px;
+    background-color:rgb(218, 216, 216) ;
+    border-radius: 20px;
+
+}
+.admindashboard_users p{
+    padding: 20px;
+    font-size: 16px;
+    font-weight: 600;
+}
+.admindashboard_users_list{
+    margin-top: 20px;
+    padding-left: 10px;
+    width: 870px;
+    height: 60px;
+    background-color:rgb(218, 216, 216) ;
+    border-radius: 20px;
+
+}
+.admindashboard_users_list p{
+    padding: 20px;
+    font-size: 16px;
+    font-weight: 600;
+
 }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "../Contributor/Contributorsignup.css"
 import { contributerRegSchema } from '../schema'
 import { useFormik } from 'formik'
@@ -7,6 +7,23 @@ import { useNavigate } from 'react-router-dom'
 
 
 function Contributorsignup() {
+  const storedReaderId = localStorage.getItem("readerid");
+console.log(storedReaderId);
+
+const[data,setdata]=useState({})
+useEffect(()=>{
+  axiosInstance.post(`/readerviewbyid/${storedReaderId}`)
+  .then((res)=>{
+    setdata(res.data.msg)
+    console.log(res.data.msg);
+  })
+  .catch((err)=>{
+    console.log(err);
+  })
+},[storedReaderId])
+
+
+
   const navigate=useNavigate()
   const onSubmit = (a) => {
     a.preventDefault();
@@ -35,7 +52,7 @@ function Contributorsignup() {
 
     useFormik({
       initialValues: {
-        firstname: '',
+        firstname: data.firstname || '',
         lastname: '',
         gender: '',
         age: '',
@@ -53,7 +70,7 @@ function Contributorsignup() {
       validateOnChange: true,
       onSubmit,
     });
-
+// console.log(data.firstname);
   return (
     <div>
       <div className='contributor_signin'>
@@ -156,13 +173,13 @@ function Contributorsignup() {
                     )}
                   </div>
                   <div className='col-6 pb-3 contributor_signin_input '>
-                    <input type='text' placeholder='Password' name='password' value={values.password} onChange={handleChange} onBlur={handleBlur} required />
+                    <input type='password' placeholder='Password' name='password' value={values.password} onChange={handleChange} onBlur={handleBlur} required />
                     {errors.password && touched.password && (
                       <p className="error">{errors.password}</p>
                     )}
                   </div>
                   <div className='col-6 pb-3 contributor_signin_input'>
-                    <input type='text' placeholder='Confirm Password' name='confirmpassword' value={values.confirmpassword} onChange={handleChange} onBlur={handleBlur} required />
+                    <input type='password' placeholder='Confirm Password' name='confirmpassword' value={values.confirmpassword} onChange={handleChange} onBlur={handleBlur} required />
                     {errors.confirmpassword && touched.confirmpassword && (
                       <p className="error">{errors.confirmpassword}</p>
                     )}

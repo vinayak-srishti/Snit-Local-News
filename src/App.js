@@ -44,6 +44,14 @@ import Contributertrendingtopics from "./Contributor/Contributertrendingtopics";
 import Contributersidebar from "./Contributor/Contributersidebar";
 import Contributerviewprofile from "./Contributor/Contributerviewprofile";
 import Contributerprofile from "./Contributor/Contributerprofile";
+import Contributeraddnews from "./Contributor/Contributeraddnews";
+import Adminviewadvertiser from "./Admin/Adminviewadvertiser";
+import Advertiserrequest from "./Admin/Advertiserrequest";
+import Adminviewsingleadvertiser from "./Admin/Adminviewsingleadvertiser";
+import Adminviewcontributer from "./Admin/Adminviewcontributer";
+import Adminviewsinglecontributer from "./Admin/Adminviewsinglecontributer";
+import Readerhome3 from "./Reader/Readerhome3";
+import Contributereditprofile from "./Contributor/Contributereditprofile";
 
 function App() {
   //local
@@ -58,6 +66,7 @@ function App() {
           <Route path="/readersignin" element={[<Readernavonlogin />, <Readersignin />]} />
           <Route path="/readerlogin" element={[<Readernavonlogin />, <ReaderLogin />]} />
           <Route path="/readernav" element={<Readernav />} />
+          <Route path="/reader_home3" element={<Readerhome3/>}/>
           <Route path="/readerforgetpswd" element={[<Readernavonlogin />, <Readerforgetpswd />]} />
           <Route path="/readerhome" element={[<Readernav />, <Readerhomecarousle />, <Readerhome />,<Footer/>]} />
           <Route path="/readercarousle" element={<Readerhomecarousle />} />
@@ -87,6 +96,9 @@ function App() {
           <Route path="/contributer_home" element={[<Contributernavbar />,<Contributercarousle/>,<Contributertrendingtopics/>,<Footer/>]}/>
           <Route path="/contributer_sidebar" element={<Contributersidebar/>}/>
           <Route path="/contributer_viewprofile" element={[<Contributernavbar />,<Contributerprofile data='contributerviewprofile'/>,<Footer/>]}/>
+          <Route path="/contributer_editprofile" element={[<Contributernavbar />,<Contributerprofile data='contributereditprofile'/>]}/>
+
+          <Route path="/contributer_addnews" element={[<Contributernavbar />,<Contributeraddnews/>,<Footer/>]}/>
 
           {/* Advertiser */}
           <Route path="/advertisersignin" element={<Advertisersignin />} />
@@ -99,11 +111,17 @@ function App() {
           <Route path="/admin-loginnav" element={<Adminlognav/>}/>
           <Route path="/admin" element={[<Adminlognav/>,<AdminLogin/>]}/>
           <Route path="/admin_sidebar" element={[<Adminlognav/>,<Adminsidebar/>]}/>
-          <Route path="/admin_viewuser" element={[<Adminlognav/>,<Adminhome data="viewuser"/>]}/>
-          <Route path="/admin_viewsingleuser/:id" element={[<Adminlognav/>,<Adminhome data="viewsingleuser"/>]}/>
-          <Route path="/admin_dashboard" element={[<Adminlognav/>,<Admindashboard/>]}/>
+          <Route path="/admin_viewuser" element={[<Adminlognav/>,<Adminhome data="viewuser"/>,<Footer/>]}/>
+          <Route path="/admin_viewsingleuser/:id" element={[<Adminlognav/>,<Adminhome data="viewsingleuser"/>,<Footer/>]}/>
+          <Route path="/admin_dashboard" element={[<Adminlognav/>,<Adminhome data='admindashboard'/>,<Footer/>]}/>
+          <Route path="/admin_viewadvertiser" element={[<Adminlognav/>,<Adminhome data='viewadvertiser'/>,<Footer/>]}/>
+          <Route path="/viewsingleadvertiser/:id" element={[<Adminlognav/>,<Adminhome data='viewsingleadvertiser'/>,<Footer/>]}/>
+          <Route path="/adminprivacy" element={[<Adminlognav/>,<Adminhome data='adminprivacy'/>,<Footer/>]}/>
+          <Route path="/adminviewcontributer" element={[<Adminlognav/>,<Adminhome data='viewcontributer'/>,<Footer/>]}/>
+          <Route path="/admin_viewsinglecontributer/:id" element={[<Adminlognav/>,<Adminhome data='viewsinglecontributer'/>,<Footer/>]}/>
 
 
+          <Route path="/advertiser_request" element={[<Adminlognav/>,<Advertiserrequest/>,<Footer/>]}/>
 
           {/* 
               <Route path="/oneone" element={<HomePage/>}/>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "../Reader/Readerprofilesidebar.css"
 import axiosInstance from '../BaseUrl'
 import { Link } from "react-router-dom";
@@ -7,6 +7,20 @@ import { Link } from "react-router-dom";
 function Contributersidebar() {
 const id=localStorage.getItem("contibuterid")
 console.log(id);
+
+const[data,setdata]=useState([])
+
+useEffect(()=>{
+  axiosInstance.post(`/contibuterviewbyid/${id}`,data)
+  .then((result)=>{
+      setdata(result.data.data)
+      console.log(result.data.data);
+   
+  })
+ .catch((err)=>{
+  console.log(err);
+ })
+},[])
 
   return (
     <div className='col-3' >
@@ -18,7 +32,7 @@ console.log(id);
 </div>
 </div> */}
 <div className="reader_profile_sidebar_title">
-<p>Name</p>
+<p>{data.firstname}</p>
 </div>
 <div className="reader_profile_sidebar_settings reader_profile_sidebar_padding ">
 <i class="ri-settings-3-fill reader_profile_sidebar_icons"></i>
@@ -40,7 +54,7 @@ console.log(id);
 </Link>
 </div>
 <div className="reader_profile_sidebar_padding ">
-<Link to='' >
+<Link to='/contributer_addnews' >
 <div className="reader_profile_sidebar_account_info">
   <div className="d-flex mt-2 ">
     <i class="ri-upload-2-line reader_profile_sidebar_icons"></i>{" "}
