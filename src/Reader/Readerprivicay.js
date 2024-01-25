@@ -30,7 +30,9 @@ function Readerprivicay() {
             <div className='row'>
                 <div className='col reader_privacytext'>
                     <h3>Security Checks</h3>
-                    <p>Review Security issues by running Checks across apps, devices and emails sents. </p>
+                    <p>Review Security issues by running Checks across apps, devices .
+                        
+                    </p>
                 </div>
             </div>
 

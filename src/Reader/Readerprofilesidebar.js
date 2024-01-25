@@ -93,7 +93,7 @@ const handleLogout = () => {
         </Link>
         
       </div>
-      <div className="reader_profile_sidebar_padding ">
+      {/* <div className="reader_profile_sidebar_padding ">
         <Link to='' >
         <div className="reader_profile_sidebar_account_info">
           <div className="d-flex mt-2">
@@ -107,7 +107,7 @@ const handleLogout = () => {
         </div>
         </Link>
         
-      </div>
+      </div> */}
       <div className="reader_profile_sidebar_padding ">
         <Link to= '/reader_pageroles' >
         <div className="reader_profile_sidebar_account_info">

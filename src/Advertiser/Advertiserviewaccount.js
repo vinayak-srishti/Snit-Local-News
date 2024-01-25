@@ -1,29 +1,26 @@
 import React, { useEffect, useState } from 'react'
-import "../Reader/Readerprofileaccountinfo.css"
 import { Link } from 'react-router-dom'
 import img from "../Assets/profileside.png"
 import axiosInstance from '../BaseUrl'
 
 
-function Contributerviewprofile() {
-  const id=localStorage.getItem("contibuterid")
-console.log(id);
+function Advertiserviewaccount() {
 
-const[data,setdata]=useState({})
+    const id=localStorage.getItem("advertiserid")
+    console.log(id);
+    const[data,setData]=useState({})
 
 useEffect(()=>{
-  axiosInstance.post(`contibuterviewbyid/${id}`,data)
-  .then((res)=>{
-    console.log(res);
-    setdata(res.data.data)
-    console.log(res.data.data);
-  })
-  .catch((err)=>{
-    console.log(err);
-  })
+    axiosInstance.post(`viewoneadvertiser/${id}`)
+    .then((res)=>{
+        console.log(res)
+        setData(res.data.data);
+        console.log(res.data.data);
+    })
+    .catch((err)=>{
+        console.log(err);
+    })
 },[])
-console.log(data);
-
 
   return (
     <div className='col-9' style={{marginLeft:"30px"}}>
@@ -44,8 +41,8 @@ console.log(data);
     <p>{data.gender}</p>
   </div>
   <div className='reader_profile_account_info_fulldetails_box mb-3' >
-    <p>Age</p>
-    <p>{data.age}</p>
+    <p>Reg No</p>
+    <p>{data.regno}</p>
   </div>
   <div className='reader_profile_account_info_fulldetails_box mb-3' >
     <p>Street</p>
@@ -63,9 +60,9 @@ console.log(data);
     <p>Pincode</p>
     <p>{data.pincode}</p>
   </div>
-  <div className='reader_profile_account_info_fulldetails_box mb-3' >
-    <p>Nationality</p>
-    <p>{data.nationality}</p>
+  <div className='reader_profile_account_info_fulldetails_box mb-3'style={{ maxHeight: '100px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', border: '1px solid #ccc', padding: '10px' }} >
+    <p>companyname</p>
+    <p>{data.companyname}</p>
   </div>
   <div className='reader_profile_account_info_fulldetails_box mb-3' >
     <p>Contact</p>
@@ -77,7 +74,7 @@ console.log(data);
   </div>
 
   <div className='reader_profile_account_info_editbtn ' >
-    <Link to='/contributer_editprofile'><button className='btn btn-primary' >Edit Profile</button></Link>
+    <Link to='/advertiser_editprofile'><button className='btn btn-primary' >Edit Profile</button></Link>
   </div>
 </div>
 <div className='col-5 reader_profile_account_info_image' >
@@ -91,4 +88,4 @@ console.log(data);
   )
 }
 
-export default Contributerviewprofile
+export default Advertiserviewaccount

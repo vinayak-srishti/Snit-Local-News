@@ -60,7 +60,7 @@ function ReaderLogin() {
             <button type='submit'  className='btn btn-primary mt-4 login_button'>LOGIN</button>
           </div>
           </form>
-          <div className='col-sm-12 reader_login_or'>
+          <div className='col-sm-12 reader_login_or'style={{marginTop:"10px"}}>
             <p>OR</p>
           </div>
           <div className='col-sm-12 reader_login_last'>

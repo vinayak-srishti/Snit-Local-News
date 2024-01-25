@@ -52,6 +52,19 @@ import Adminviewcontributer from "./Admin/Adminviewcontributer";
 import Adminviewsinglecontributer from "./Admin/Adminviewsinglecontributer";
 import Readerhome3 from "./Reader/Readerhome3";
 import Contributereditprofile from "./Contributor/Contributereditprofile";
+import Advertisersidebar from "./Advertiser/Advertisersidebar";
+import Advertisermain from "./Advertiser/Advertisermain";
+import Advertiserupload from "./Advertiser/Advertiserupload";
+import Moderatorsidebar from "./Moderator/Moderatorsidebar";
+import Moderatormain from "./Moderator/Moderatormain";
+import Moderatorrequest from "./Moderator/Moderatorrequest";
+import Moderatorsinglerequest from "./Moderator/Moderatorsinglerequest";
+import Others from "./Reader/Others";
+import Readerviewonenews from "./Reader/Readerviewonenews";
+import Menu from "./Reader/Menu";
+import Politicsviewone from "./Reader/Politicsviewone";
+import Allnewsviewone from "./Reader/Allnewsviewone";
+import ModeratorLogin from "./Moderator/ModeratorLogin";
 
 function App() {
   //local
@@ -71,12 +84,17 @@ function App() {
           <Route path="/readerhome" element={[<Readernav />, <Readerhomecarousle />, <Readerhome />,<Footer/>]} />
           <Route path="/readercarousle" element={<Readerhomecarousle />} />
           <Route path="/readerpolitics" element={[<Readernavafterlogin/>,<Readerpoliticspage />,<Footer/>]} />
-          <Route path="/readersports" element={[<Readernavafterlogin/>,<Readersports/>,<Footer/>]}/>
+          <Route path="/readersports" element={[<Readernavafterlogin/>,<Readersports url={url}/>,<Footer/>]}/>
           <Route path="/readernavafter" element={<Readernavafterlogin />} />
           <Route path="/readernavonlogin" element={<Readernavonlogin />} />
           <Route path="/readerhomelogin" element={[<Readernavafterlogin />, <Readerhomecarousle />, <Readerhome />,<Footer/>]} />
           <Route path="/readersidebar" element={<Readerprofilesidebar />} />
           <Route path="/footer" element={<Footer/>}/>
+          <Route path="/others" element={[<Readernavafterlogin />,<Others url={url}/>,<Footer/>]}/>
+          <Route path="/viewonenewssports/:id" element={[<Readernavafterlogin/>,<Readerviewonenews/>,<Footer/>]}/>
+          <Route path="/viewonepolitics/:id" element={[<Readernavafterlogin/>,<Politicsviewone/>,<Footer/>]}/>
+          <Route path="/viewallnewsbyid/:id" element={[<Readernavafterlogin/>,<Allnewsviewone/>,<Footer/>]}/>
+          <Route path="/menu" element={<Menu/>}/>
           
           {/* <Route path="/readerprofile_accountinfo" element={<Readerprofileaccountinfo/>}/> */}
 
@@ -96,7 +114,7 @@ function App() {
           <Route path="/contributer_home" element={[<Contributernavbar />,<Contributercarousle/>,<Contributertrendingtopics/>,<Footer/>]}/>
           <Route path="/contributer_sidebar" element={<Contributersidebar/>}/>
           <Route path="/contributer_viewprofile" element={[<Contributernavbar />,<Contributerprofile data='contributerviewprofile'/>,<Footer/>]}/>
-          <Route path="/contributer_editprofile" element={[<Contributernavbar />,<Contributerprofile data='contributereditprofile'/>]}/>
+          <Route path="/contributer_editprofile" element={[<Contributernavbar />,<Contributerprofile data='contributereditprofile'/>,<Footer/>]}/>
 
           <Route path="/contributer_addnews" element={[<Contributernavbar />,<Contributeraddnews/>,<Footer/>]}/>
 
@@ -105,6 +123,27 @@ function App() {
           <Route path="/advertiserlogin" element={[<Advertiserloginnav />, <AdvertiserLogin />]} />
           <Route path="/advertiserloginnav" element={<Advertiserloginnav />} />
           <Route path="/advertiserforgetpswd" element={[<Advertiserloginnav />, <Advertiserforgetpswd />]} />
+          <Route path="/advertiser_sidebar" element={[<Advertiserloginnav/>,<Advertisersidebar/>,<Footer/>]}/>
+          <Route path="/advertiser_viewuploads" element={[<Advertiserloginnav/>,<Advertisermain data="viewpro"/>,<Footer/>]}/>
+          <Route path="/advertiser_viewaccount" element={[<Advertiserloginnav/>,<Advertisermain data="viewaccountmy"/>,<Footer/>]}/>
+          <Route path="/advertiser_editprofile" element={[<Advertiserloginnav/>,<Advertisermain data="advertiser_editprofile"/>,<Footer/>]}/>
+          <Route path="/advertiser_about" element={[<Advertiserloginnav/>,<Advertisermain data="advertiser_about"/>,<Footer/>]}/>
+          <Route path="/advertiser_privacy" element={[<Advertiserloginnav/>,<Advertisermain data="advertiser_privacy"/>,<Footer/>]}/>
+
+
+          <Route path="/advertiser_upload" element={[<Advertiserloginnav/>,<Advertiserupload/>,<Footer/>]}/>
+
+
+          {/* moderator */}
+          <Route path="/moderatorlogin" element={[<Adminlognav/>,<ModeratorLogin/>]}/>
+          <Route path="/moderatorsidebar" element={[<Moderatorsidebar/>,<Footer/>]}/>
+          <Route path="/req" element={<Moderatorrequest url={url}/>}/>
+          <Route path="/moderator_requests" element={[<Moderatormain data="requestm"/>,<Footer/>]}/>
+          <Route path="/moderator_singlerequest/:id" element={[<Moderatorsinglerequest url={url}/>]}/>
+
+
+
+
 
 
           {/* Admin */}

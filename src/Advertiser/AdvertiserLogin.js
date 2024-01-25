@@ -10,14 +10,16 @@ function AdvertiserLogin() {
     setlogin({ ...login, [a.target.name]: a.target.value });
   };
 
+  const navigate=useNavigate()
   const submitfn = (e) => {
     e.preventDefault()
     axiosInstance.post(`/advertiserlogin`, login)
       .then((result) => {
         console.log("data entered", result);
         if (result.data.status == 200) {
-          // localStorage.setItem("readerid", result.data.data._id);
+          localStorage.setItem("advertiserid", result.data.data._id);
           alert("login Sucessfully...");
+          navigate("/advertiser_viewaccount")
           // window.location.reload(false)
         } else if (result.data.status == 500) {
           // alert(result.data.msg);

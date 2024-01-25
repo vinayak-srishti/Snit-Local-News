@@ -36,7 +36,7 @@ function Readernavonlogin() {
                 <li class="nav-item">
                   <a class="nav-link" href="#">Sports</a>
                 </li>
-                <li class="nav-item dropdown">
+                {/* <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                     data-bs-toggle="dropdown" aria-expanded="false">
                     India
@@ -47,7 +47,7 @@ function Readernavonlogin() {
                     <li> <a class="dropdown-item" href="#">China</a></li>
                     <li><a class="dropdown-item" href="#">Russia</a></li>
                   </ul>
-                </li>
+                </li> */}
                 <li class="nav-item">
                   <a class="nav-link" href="#">Others</a>
                 </li>

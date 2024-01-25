@@ -5,63 +5,65 @@ import axiosInstance from '../BaseUrl'
 import { useNavigate } from 'react-router-dom'
 
 
-function Contributereditprofile() {
-    const[data,setdata]=useState({})
-    const navigate=useNavigate()
-    const id=localStorage.getItem("contibuterid")
+function Advertisereditprofile() {
+    const id=localStorage.getItem("advertiserid")
     console.log(id);
+    const navigate=useNavigate()
+
+    const[data,setData]=useState({})
+
 
     useEffect(()=>{
-        axiosInstance.post(`contibuterviewbyid/${id}`,data)
+        axiosInstance.post(`viewoneadvertiser/${id}`)
         .then((res)=>{
-            console.log(res);
-            setdata(res.data.data)
+            console.log(res)
+            setData(res.data.data);
             console.log(res.data.data);
-          })
-          .catch((err)=>{
+        })
+        .catch((err)=>{
             console.log(err);
-          })
-        
+        })
     },[])
-
-    const editfn=((e)=>{
+    
+    const updatefn=((e)=>{
         e.preventDefault()
-
         if (!/^\d{6}$/.test(data.pincode)) {
             alert("Pincode must have 6 digits");
             return;
           }
-        axiosInstance.post(`updatecontributer/${id}`,data)
-        .then((res)=>{
-            if(res.data.status===200){
-              alert("Profile updated successfully")
-              navigate("/contributer_viewprofile")
-              window.location.reload();
 
-            }
-            else{
+          axiosInstance.post(`editadvertiser/${id}`,data)
+          .then((res)=>{
+              if(res.data.status===200){
+                alert("Profile updated successfully")
+                navigate("/advertiser_viewaccount")
+                window.location.reload();
+  
+              }
+              else{
+                alert("something went wrong")
+              }
+            })
+            .catch((err)=>{
+              console.log(err);
               alert("something went wrong")
-            }
-          })
-          .catch((err)=>{
-            console.log(err);
-            alert("something went wrong")
-          })
+            })
 
+          
+        
+  
     })
     const onchangefn=((e)=>{
-        setdata({
+        setData({
           ...data,[e.target.name]:e.target.value
         })
         console.log(data);
       })
-      
-
 
   return (
-    <div className='col-9 ' style={{marginLeft:"30px"}}>
+    <div className='col-8 ' style={{marginLeft:"30px"}}>
     <div className='reader_editprofile_account_info' >
-      <form onSubmit={editfn}>
+      <form onSubmit={updatefn}>
 <div className='reader_profile_account_info_details row' >
 <div className='col-7  reader_profile_account_info_fulldetails ' >
   <p >Edit Profile</p>
@@ -97,12 +99,12 @@ function Contributereditprofile() {
         </p>
   </div>
   <div className='reader_profile_accounts_info_fulldetails_box mb-3' >
-    <p>Age</p>
+    <p>Regno</p>
     <p>
     <input
         type="number"
-        name="age"
-        value={data.age}
+        name="regno"
+        value={data.regno}
         onChange={onchangefn}
   />
         </p>
@@ -143,18 +145,18 @@ function Contributereditprofile() {
     <p>Pincode</p>
     <p>
     <input
-        type="text"
+        type="number"
         name="pincode"
         value={data.pincode}
         onChange={onchangefn}
         /></p>
   </div>
-  <div className='reader_profile_accounts_info_fulldetails_box mb-3' >
-    <p>Nationality</p>
+  <div className='reader_profile_accounts_info_fulldetails_box mb-3'  >
+    <p>Company</p>
     <p><input
         type="text"
-        name="nationality"
-        value={data.nationality}
+        name="companyname"
+        value={data.companyname}
         onChange={onchangefn}
       /></p>
   </div>
@@ -192,8 +194,7 @@ function Contributereditprofile() {
 </div>
 
 </div>
-
   )
 }
 
-export default Contributereditprofile
+export default Advertisereditprofile

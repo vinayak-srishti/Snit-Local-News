@@ -39,7 +39,7 @@ function Readernavafterlogin() {
                 <li class="nav-item">
                   <a class="nav-link" href="/readersports">Sports</a>
                 </li>
-                <li class="nav-item dropdown">
+                {/* <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                     data-bs-toggle="dropdown" aria-expanded="false">
                     India
@@ -50,9 +50,9 @@ function Readernavafterlogin() {
                     <li> <a class="dropdown-item" href="#">China</a></li>
                     <li><a class="dropdown-item" href="#">Russia</a></li>
                   </ul>
-                </li>
+                </li> */}
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Others</a>
+                  <a class="nav-link" href="/others">Others</a>
                 </li>
 
                 {/* <li class="nav-item dropdown">

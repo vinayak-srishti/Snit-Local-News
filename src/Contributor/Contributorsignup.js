@@ -12,10 +12,25 @@ console.log(storedReaderId);
 
 const[data,setdata]=useState({})
 useEffect(()=>{
-  axiosInstance.post(`/readerviewbyid/${storedReaderId}`)
+  axiosInstance.post(`/readerviewbyid/${storedReaderId}`,values)
   .then((res)=>{
-    setdata(res.data.msg)
-    console.log(res.data.msg);
+    const readerData = res.data.msg; // Assuming res.data.msg contains reader data
+      // Set the initial values for the form fields
+      setFieldValue('firstname', readerData.firstname);
+      setFieldValue('lastname', readerData.lastname);
+      setFieldValue('gender', readerData.gender);
+      setFieldValue('age', readerData.age);
+      setFieldValue('street', readerData.street);
+      setFieldValue('city', readerData.city);
+      setFieldValue('pincode', readerData.pincode);
+      setFieldValue('state', readerData.state);
+      setFieldValue('nationality', readerData.nationality);
+      setFieldValue('email', readerData.email);
+      setFieldValue('contact', readerData.contact);
+
+      // Other fields...
+
+      console.log(readerData);
   })
   .catch((err)=>{
     console.log(err);
@@ -27,6 +42,10 @@ useEffect(()=>{
   const navigate=useNavigate()
   const onSubmit = (a) => {
     a.preventDefault();
+    if (!/^\d{6}$/.test(values.pincode)) {
+      alert("Pincode must have 6 digits");
+      return;
+    }
     axiosInstance.post(`/contributersignup`, values)
       .then(result => {
         console.log(result);
@@ -52,7 +71,7 @@ useEffect(()=>{
 
     useFormik({
       initialValues: {
-        firstname: data.firstname || '',
+        firstname:  '',
         lastname: '',
         gender: '',
         age: '',
@@ -96,11 +115,11 @@ useEffect(()=>{
                   </div>
                   <div className="col-12 pb-3 input_radio " >
                     <label className="pb-3">Gender :</label>
-                    <input type="radio" id="male" name="gender" value='male' onChange={handleChange} onBlur={handleBlur} required />
+                    <input type="radio" id="male" name="gender" value='male' onChange={handleChange} onBlur={handleBlur} checked={values.gender === 'male'} required />
                     <label for="male">&nbsp; Male &nbsp;</label>
-                    <input type="radio" id="female" name="gender" value='female' onChange={handleChange} onBlur={handleBlur} required />
+                    <input type="radio" id="female" name="gender" value='female' onChange={handleChange} onBlur={handleBlur} checked={values.gender === 'female'} required />
                     <label for="female">&nbsp; Female &nbsp;</label>
-                    <input type="radio" id="others" name="gender" value='others' onChange={handleChange} onBlur={handleBlur} required />
+                    <input type="radio" id="others" name="gender" value='others' onChange={handleChange} onBlur={handleBlur}  checked={values.gender === 'others'} required />
                     <label for="female">&nbsp; Others &nbsp;</label>
                     {errors.gender && touched.gender && (
                       <p className="error">{errors.gender}</p>

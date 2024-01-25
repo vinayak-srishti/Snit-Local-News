@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "../Advertiser/Advertisersignin.css"
 import img from "../Assets/logo.png"
 import { advertiserRegSchema } from '../schema'
@@ -8,6 +8,35 @@ import { useNavigate } from 'react-router-dom'
 
 
 function Advertisersignin() {
+
+    const storedReaderId = localStorage.getItem("readerid");
+    console.log(storedReaderId);
+    useEffect(()=>{
+        axiosInstance.post(`/readerviewbyid/${storedReaderId}`,values)
+        .then((res)=>{
+          const readerData = res.data.msg; // Assuming res.data.msg contains reader data
+            // Set the initial values for the form fields
+            setFieldValue('firstname', readerData.firstname);
+            setFieldValue('lastname', readerData.lastname);
+            setFieldValue('gender', readerData.gender);
+            setFieldValue('street', readerData.street);
+            setFieldValue('city', readerData.city);
+            setFieldValue('pincode', readerData.pincode);
+            setFieldValue('state', readerData.state);
+            setFieldValue('nationality', readerData.nationality);
+            setFieldValue('email', readerData.email);
+            setFieldValue('contact', readerData.contact);
+      
+            // Other fields...
+      
+            console.log(readerData);
+        })
+        .catch((err)=>{
+          console.log(err);
+        })
+      },[storedReaderId])
+          
+const navigate=useNavigate()
     const onSubmit=(a)=>{
         a.preventDefault()
         axiosInstance.post(`/advertisersignup`,values)
@@ -16,6 +45,8 @@ function Advertisersignin() {
             console.log(result);
             if (result.data.status == 200) {
               alert("reg sucessfully")
+              navigate("/advertiserlogin")
+
             }
             else if (result.data.status == 409) {
               alert(result.data.msg)
@@ -181,7 +212,9 @@ function Advertisersignin() {
                                     <p>Leverage insights to optimize campaigns and drive convertions</p>
                                 </div>
                                 <div className='col-12 pb-6 contributer_para2'>
-                                    <p>Once you are register,it requires approval by LNG <br />Normally it takes 24 hrs for approval <br />But if ,still not approved mail at Inghelpline@gmail.com</p>
+                                    <p>Once you are register,it requires approval by LNG <br />Normally it takes 24 hrs for approval <br />
+                                    {/* But if ,still not approved mail at Inghelpline@gmail.com */}
+                                    </p>
                                 </div>
 
 
