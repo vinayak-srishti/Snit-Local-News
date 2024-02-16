@@ -24,8 +24,13 @@ function Readersports() {
    viewallnewsbycategory();
   },[])
 
+  const storedReaderId = localStorage.getItem("readerid");
+  console.log(storedReaderId);
+
+
+
   return (
-    <div className='reader_politics container'>
+    <div className='reader_politics container'  style={{margin:"30px"}}>
               <h1>Sports</h1>
 
               {newsData.length ?(
@@ -43,7 +48,11 @@ function Readersports() {
       <div className='col-md-6 offset-md-1  reader_politics_text'>
       <h2>"{a.title}"</h2>
       <p>{a.content}
-      <Link to={"/viewonenewssports/"+a._id}><button type='submit' className='readmorebtn'>Read more</button></Link>
+      {storedReaderId ?(
+      <Link to={"/viewallnewsbyid/"+a._id}><button type='submit' className='readmorebtn'>Read more</button></Link>
+      ):(
+        <button type='submit' className='readmorebtn'>Read more</button>
+      )}
       </p>
         <div className='like-dislike-buttons'>
               <button type='button' className='ri-thumb-up-line'> </button>

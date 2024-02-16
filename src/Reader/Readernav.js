@@ -29,13 +29,13 @@ function Readernav() {
 
 
                 <li class="nav-item">
-                  <a class="nav-link " href="#" >Home</a>
+                  <a class="nav-link " href="/" >Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Politics</a>
+                  <a class="nav-link" href="/politicslogin">Politics</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Sports</a>
+                  <a class="nav-link" href="/sportslogin">Sports</a>
                 </li>
                 {/* <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -50,7 +50,7 @@ function Readernav() {
                   </ul>
                 </li> */}
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Others</a>
+                  <a class="nav-link" href="/otherslogin">Others</a>
                 </li>
 
                 {/* <li class="nav-item dropdown">

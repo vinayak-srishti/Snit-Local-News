@@ -35,7 +35,28 @@ function Readerhome() {
                                         </div>
                                     </div>
 
-                                    <div class="col-lg-3">
+                                    {/* <div class="col-lg-3">
+                                        <div class="user_trendingNews user_trendingNews_bg">
+                                            <img src={img} class="img-fluid" alt="" />
+                                            <p class="user_trendingNews_content ">"Lorem Ipsum is simply dummy text of the printing
+                                                and typesetting
+                                                industry.
+                                                Lorem Ipsum has been the
+                                                industry's standard dummy text ever since the 1500sjkdcndjbcjdb"
+                                            </p>
+
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <p className='pclass'><i class="fa fa-thin fa-user"></i> Rahul</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p className='pclass'><i class="fa fa-regular fa-clock"></i>1 hour ago</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> */}
+
+                                    {/* <div class="col-lg-3">
                                         <div class="user_trendingNews user_trendingNews_bg">
                                             <img src={img} class="img-fluid" alt="" />
                                             <p class="user_trendingNews_content ">"Lorem Ipsum is simply dummy text of the printing
@@ -54,9 +75,9 @@ function Readerhome() {
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> */}
 
-                                    <div class="col-lg-3">
+                                    {/* <div class="col-lg-3">
                                         <div class="user_trendingNews user_trendingNews_bg">
                                             <img src={img} class="img-fluid" alt="" />
                                             <p class="user_trendingNews_content ">"Lorem Ipsum is simply dummy text of the printing
@@ -75,28 +96,7 @@ function Readerhome() {
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-
-                                    <div class="col-lg-3">
-                                        <div class="user_trendingNews user_trendingNews_bg">
-                                            <img src={img} class="img-fluid" alt="" />
-                                            <p class="user_trendingNews_content ">"Lorem Ipsum is simply dummy text of the printing
-                                                and typesetting
-                                                industry.
-                                                Lorem Ipsum has been the
-                                                industry's standard dummy text ever since the 1500s"
-                                            </p>
-
-                                            <div class="row">
-                                                <div class="col-6">
-                                                    <p className='pclass'><i class="fa fa-thin fa-user"></i> Rahul</p>
-                                                </div>
-                                                <div class="col-6">
-                                                    <p className='pclass'><i class="fa fa-regular fa-clock"></i>1 hour ago</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
 
@@ -124,7 +124,7 @@ function Readerhome() {
                                         </div>
                                     </div>
 
-                                    <div class="col-lg-3">
+                                    {/* <div class="col-lg-3">
                                         <div class="user_trendingNews user_trendingNews_bg">
                                             <img src={img} class="img-fluid" alt="" />
                                             <p class="user_trendingNews_content ">"Lorem Ipsum is simply dummy text of the printing
@@ -143,9 +143,9 @@ function Readerhome() {
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> */}
 
-                                    <div class="col-lg-3">
+                                    {/* <div class="col-lg-3">
                                         <div class="user_trendingNews user_trendingNews_bg">
                                             <img src={img} class="img-fluid" alt="" />
                                             <p class="user_trendingNews_content ">"Lorem Ipsum is simply dummy text of the printing
@@ -164,9 +164,9 @@ function Readerhome() {
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> */}
 
-                                    <div class="col-lg-3">
+                                    {/* <div class="col-lg-3">
                                         <div class="user_trendingNews user_trendingNews_bg">
                                             <img src={img} class="img-fluid" alt="" />
                                             <p class="user_trendingNews_content ">"Lorem Ipsum is simply dummy text of the printing
@@ -185,7 +185,7 @@ function Readerhome() {
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                         </div>

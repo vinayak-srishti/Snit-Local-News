@@ -6,8 +6,11 @@ import Readerpageroles from './Readerpageroles'
 import Readereditprofile from './Readereditprofile'
 import Readerprivicay from './Readerprivicay'
 import Readreabout from './Readreabout'
+import Savednews from './Savednews'
 
 function Readerprofile({data}) {
+  const url = "http://localhost:4004";
+
   return (
     <div className='container_readerprofile'>
         <Readerprofilesidebar className='Readerprofilesidebar'/>
@@ -21,6 +24,8 @@ function Readerprofile({data}) {
           <Readerprivicay/>
         ):data=="readerabout" ?(
           <Readreabout/>
+        ):data=='savednews' ?(
+          <Savednews url={url}/>
         ):
         ''}
     </div>

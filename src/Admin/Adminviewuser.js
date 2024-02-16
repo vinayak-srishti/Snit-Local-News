@@ -48,7 +48,7 @@ function Adminviewuser() {
             </div>
             {data.length ? (
           data.map((a) => (
-            <Link to={"/admin_viewsingleuser/"+a._id }style={{textDecoration:'none', color: 'black' }}>
+            <Link to={"/admin_viewsingleuser/"+a.id }style={{textDecoration:'none', color: 'black' }}>
               <div className='row'>
               <div className='reader_viewuser_boxes ' style={{ display: 'flex' }}> 
                          

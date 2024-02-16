@@ -19,7 +19,6 @@ useEffect(()=>{
 },[])
 
     return (
-        <div>
             <div className='col-9 admin_viewadvertiser'>
                 <div className='container'>
                     <div className=' row'>
@@ -72,7 +71,6 @@ useEffect(()=>{
 
                 </div>
             </div>
-        </div>
     )
 }
 

@@ -13,6 +13,16 @@
     font-size: 30px;
     
 }
+.carousel-inner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 70%; /* Adjust this value to control the width of the black shade */
+    background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.879) 100%);
+    z-index: 1;
+  }
 .carousel-inner {
     height: 600px;
 }
@@ -30,14 +40,17 @@
     overflow: hidden; 
     border-radius: 4px;
     border-color:  white;
+    background-color: rgba(0, 0, 0, 0.628);
 }
 
 .carousel-caption{
     white-space: nowrap;
-    color: gray;
+    color: rgb(176, 173, 173);
     padding-bottom: 250px;
     padding-left: 500px;
     font-size: 50px;
     font-weight:bolder;
     line-height: 60px;
+    /* position: relative; */
+  z-index: 2;
 }

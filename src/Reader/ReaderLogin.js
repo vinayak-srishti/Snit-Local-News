@@ -22,7 +22,9 @@ function ReaderLogin() {
       if (result.data.status == 200) {
         localStorage.setItem("readerid", result.data.data._id);
         alert("login Sucessfully...");
-        navigate("/readerhomelogin")
+        // navigate("/")
+        navigate("/readerhome")
+
         window.location.reload();
       } else if (result.data.status==500) {
         // alert(result.data.msg);

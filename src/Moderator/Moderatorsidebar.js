@@ -35,7 +35,7 @@ function Moderatorsidebar() {
 </Link>
 </div> */}
 <div className="reader_profile_sidebar_padding ">
-<Link to='/moderator_requests' >
+<Link to='/moderatorrequest' >
 <div className="reader_profile_sidebar_account_info">
   <div className="d-flex mt-2 ">
     <i class="ri-git-pull-request-line reader_profile_sidebar_icons"></i>{" "}

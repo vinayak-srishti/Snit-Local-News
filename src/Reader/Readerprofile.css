@@ -2,7 +2,7 @@
     display: flex;
     padding-left: 50px;
     padding-right: 50px;
-    justify-content:space-between;
+    /* justify-content:space-between; */
 }
 .Readerprofilesidebar {
     width: 30%;

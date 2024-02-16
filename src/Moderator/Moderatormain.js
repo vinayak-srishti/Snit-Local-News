@@ -2,11 +2,11 @@ import React from 'react'
 import Moderatorsidebar from './Moderatorsidebar'
 import Moderatorrequest from './Moderatorrequest'
 
-function Moderatormain(data) {
+function Moderatormain({data}) {
   return (
     <div style={{display:"flex"}}>
         <Moderatorsidebar/>
-        {data=="requestm" ?(
+        {data=="request" ?(
             <Moderatorrequest/>
         ):""}
     </div>

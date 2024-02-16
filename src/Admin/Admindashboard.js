@@ -47,7 +47,7 @@ function Admindashboard() {
     console.log(advertiser.length);
 
     return (
-        <div className='col-9'>
+        <div className='col-9' style={{margin:"20px"}}>
 
             <div className='admin_dashboard container'>
                 <div className='row'>
@@ -68,7 +68,7 @@ function Admindashboard() {
                     </div>
                     <div className='admin_dashboard_box col-2'>
                         <p>Moderator Count</p>
-                        <h1 id='count'>400</h1>
+                        <h1 id='count'>1</h1>
                     </div>
                 </div>
                 <div className='row'>

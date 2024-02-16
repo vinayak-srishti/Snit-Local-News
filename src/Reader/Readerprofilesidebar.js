@@ -63,7 +63,7 @@ const handleLogout = () => {
         </Link>
       </div>
       <div className="reader_profile_sidebar_padding ">
-        <Link to='' >
+        <Link to='/savednews' >
         <div className="reader_profile_sidebar_account_info">
           <div className="d-flex mt-2 ">
             <i class="ri-notification-3-fill reader_profile_sidebar_icons"></i>{" "}
@@ -78,7 +78,7 @@ const handleLogout = () => {
         
       </div>
 
-      <div className="reader_profile_sidebar_padding ">
+      {/* <div className="reader_profile_sidebar_padding ">
         <Link to='' >
         <div className="reader_profile_sidebar_account_info">
           <div className="d-flex mt-2 ">
@@ -92,7 +92,7 @@ const handleLogout = () => {
         </div>
         </Link>
         
-      </div>
+      </div> */}
       {/* <div className="reader_profile_sidebar_padding ">
         <Link to='' >
         <div className="reader_profile_sidebar_account_info">

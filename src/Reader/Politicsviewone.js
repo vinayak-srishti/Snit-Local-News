@@ -8,9 +8,9 @@ import axiosInstance from '../BaseUrl'
 
 
 
-function Politicsviewone() {
+function Politicsviewone({url}) {
     const id=useParams()
-    const[data,setdata]=useState({})
+    const[data,setdata]=useState({image: { filename: '' }})
 useEffect(()=>{
     axiosInstance.post(`viewnewsById/${id.id}`)
     .then((res)=>{
@@ -21,6 +21,7 @@ useEffect(()=>{
         console.log(err);
     })
 },[])
+console.log(data.image.filename);
 const dateTime = new Date(data.date);
                     const timeString = dateTime.toLocaleTimeString();
   return (
@@ -30,13 +31,13 @@ const dateTime = new Date(data.date);
           <Link to="/readerpolitics" ><img src={img} alt='imageartrow' width='40px' height='40px' /></Link> 
         </div>
         <div className='reader_viewone col-10 '>
-            <h2>Sports</h2>
+            <h2>Politics</h2>
         </div>
         </div>
         <div className='row'>
             <div className='col-11 '>
 
-                <img src={img1} alt='images' className='reader_viewone_image'  />
+                <img src={`${url}/${data.image.filename}`} alt='images' className='reader_viewone_image'  />
             </div>
             <div className='col-1'>
              {/* <Popup trigger={

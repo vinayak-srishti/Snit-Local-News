@@ -40,7 +40,7 @@
       /* margin: auto; */
       margin-left: 30px;
       border-radius: 7px;
-      height: 40px;
+      min-height: 40px;
   }
   .reader_profile_account_info_fulldetails_box p{
       color: #000;

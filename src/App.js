@@ -65,6 +65,12 @@ import Menu from "./Reader/Menu";
 import Politicsviewone from "./Reader/Politicsviewone";
 import Allnewsviewone from "./Reader/Allnewsviewone";
 import ModeratorLogin from "./Moderator/ModeratorLogin";
+import Readercarousel2 from "./Reader/Readercarousel2";
+import Adminaddrequest from "./Admin/Adminaddrequest";
+import Adminviewsinglerequest from "./Admin/Adminviewsinglerequest";
+import Comments from "./Reader/Comments";
+import Report from "./Reader/Report";
+import Contributerviewmynews from "./Contributor/Contributerviewmynews";
 
 function App() {
   //local
@@ -75,35 +81,43 @@ function App() {
       <div>
         <Routes>
           {/* Readrer */}
-          <Route path="/" element={[<Readernav />, <Readerhomecarousle />, <Readerhome />]} />
+          <Route path="/" element={[<Readernav />, <Readerhomecarousle /> ,<Readercarousel2 url={url}/>,<Readerhome3 url={url}/>,<Footer/>]} />
           <Route path="/readersignin" element={[<Readernavonlogin />, <Readersignin />]} />
-          <Route path="/readerlogin" element={[<Readernavonlogin />, <ReaderLogin />]} />
+          <Route path="/readerlogin" element={[<Readernav />, <ReaderLogin />]} />
           <Route path="/readernav" element={<Readernav />} />
-          <Route path="/reader_home3" element={<Readerhome3/>}/>
-          <Route path="/readerforgetpswd" element={[<Readernavonlogin />, <Readerforgetpswd />]} />
-          <Route path="/readerhome" element={[<Readernav />, <Readerhomecarousle />, <Readerhome />,<Footer/>]} />
+          <Route path="/politicslogin"element={[<Readernav />,<Readerpoliticspage  url={url} />,<Footer/>]}/>
+          <Route path="/sportslogin"element={[<Readernav />,<Readersports url={url}/>,<Footer/>]}/>
+          <Route path="/otherslogin"element={[<Readernav />,<Others url={url}/>,<Footer/>]}/>
+
+          <Route path="/reader_home3" element={<Readerhome3 url={url}/>}/>
+          <Route path="/readerforgetpswd" element={[<Readernav />, <Readerforgetpswd />]} />
+          <Route path="/readerhome" element={[<Readernavafterlogin />, <Readerhomecarousle /> ,<Readercarousel2 url={url}/>,<Readerhome3 url={url}/>,<Footer/>]} />
           <Route path="/readercarousle" element={<Readerhomecarousle />} />
-          <Route path="/readerpolitics" element={[<Readernavafterlogin/>,<Readerpoliticspage />,<Footer/>]} />
-          <Route path="/readersports" element={[<Readernavafterlogin/>,<Readersports url={url}/>,<Footer/>]}/>
           <Route path="/readernavafter" element={<Readernavafterlogin />} />
           <Route path="/readernavonlogin" element={<Readernavonlogin />} />
           <Route path="/readerhomelogin" element={[<Readernavafterlogin />, <Readerhomecarousle />, <Readerhome />,<Footer/>]} />
           <Route path="/readersidebar" element={<Readerprofilesidebar />} />
           <Route path="/footer" element={<Footer/>}/>
+          <Route path="/readre-carousel2" element={<Readercarousel2 url={url}/>}/>
+
+          <Route path="/readerpolitics" element={[<Readernavafterlogin/>,<Readerpoliticspage  url={url} />,<Footer/>]} />
+          <Route path="/readersports" element={[<Readernavafterlogin/>,<Readersports url={url}/>,<Footer/>]}/>
           <Route path="/others" element={[<Readernavafterlogin />,<Others url={url}/>,<Footer/>]}/>
-          <Route path="/viewonenewssports/:id" element={[<Readernavafterlogin/>,<Readerviewonenews/>,<Footer/>]}/>
-          <Route path="/viewonepolitics/:id" element={[<Readernavafterlogin/>,<Politicsviewone/>,<Footer/>]}/>
-          <Route path="/viewallnewsbyid/:id" element={[<Readernavafterlogin/>,<Allnewsviewone/>,<Footer/>]}/>
+          {/* <Route path="/viewonenewssports/:id" element={[<Readernavafterlogin/>,<Readerviewonenews/>,<Footer/>]}/> */}
+          {/* <Route path="/viewonepolitics/:id" element={[<Readernavafterlogin/>,<Politicsviewone url={url}/>,<Footer/>]}/> */}
+          <Route path="/viewallnewsbyid/:id" element={[<Readernavafterlogin/>,<Allnewsviewone url={url}/>,<Footer/>]}/>
           <Route path="/menu" element={<Menu/>}/>
-          
-          {/* <Route path="/readerprofile_accountinfo" element={<Readerprofileaccountinfo/>}/> */}
+          <Route path="/comments" element={<Comments/>}/>
+          <Route path="/report" element={<Menu data="report"/>}/>
+
+          <Route path="/savednews" element={[<Readernavafterlogin />,<Readerprofile data="savednews"/>]}/>
 
           <Route path="/readerprofile_accountinfo" element={[<Readernavafterlogin />, <Readerprofile data='account' />,<Footer/>]} />
           <Route path="/reader_pageroles" element={[<Readernavafterlogin />, <Readerprofile data='pagerole' />,<Footer/>]} />
           <Route path="/reader_editprofile" element={[<Readernavafterlogin />, <Readerprofile data='editprofile' />,<Footer/>]} />
           <Route path="/reader_privacy" element={[<Readernavafterlogin/>,<Readerprofile data='readerprivacy'/>,<Footer/>]}/>
           <Route path="/reader_about" element={[<Readernavafterlogin/>,<Readerprofile data='readerabout'/>,<Footer/>]}/>
-
+          
           { /*Contributor*/}
           <Route path="/contributorsignup" element={<Contributorsignup />} />
           <Route path="/contributerlogin" element={<ContributorLogin />} />
@@ -111,12 +125,13 @@ function App() {
           <Route path="/contributernavbar" element={<Contributernavbar />} />
           <Route path="/contributer_carousel" element={<Contributercarousle/>}/>
           <Route path="/contributer_trendingtopics" element={<Contributertrendingtopics/>}/>
-          <Route path="/contributer_home" element={[<Contributernavbar />,<Contributercarousle/>,<Contributertrendingtopics/>,<Footer/>]}/>
+          <Route path="/contributer_home" element={[<Contributernavbar />,<Others url={url}/>,<Footer/>]}/>
           <Route path="/contributer_sidebar" element={<Contributersidebar/>}/>
           <Route path="/contributer_viewprofile" element={[<Contributernavbar />,<Contributerprofile data='contributerviewprofile'/>,<Footer/>]}/>
           <Route path="/contributer_editprofile" element={[<Contributernavbar />,<Contributerprofile data='contributereditprofile'/>,<Footer/>]}/>
 
           <Route path="/contributer_addnews" element={[<Contributernavbar />,<Contributeraddnews/>,<Footer/>]}/>
+          <Route path="/contributerviewnewsbyid" element={[<Contributernavbar />,<Contributerviewmynews/>,<Footer/>]}/>
 
           {/* Advertiser */}
           <Route path="/advertisersignin" element={<Advertisersignin />} />
@@ -137,7 +152,8 @@ function App() {
           {/* moderator */}
           <Route path="/moderatorlogin" element={[<Adminlognav/>,<ModeratorLogin/>]}/>
           <Route path="/moderatorsidebar" element={[<Moderatorsidebar/>,<Footer/>]}/>
-          <Route path="/req" element={<Moderatorrequest url={url}/>}/>
+          <Route path="/moderatorrequest" element={[<Moderatormain data="request"/>]}/>
+          {/* <Route path="/req" element={<Moderatorrequest url={url}/>}/> */}
           <Route path="/moderator_requests" element={[<Moderatormain data="requestm"/>,<Footer/>]}/>
           <Route path="/moderator_singlerequest/:id" element={[<Moderatorsinglerequest url={url}/>]}/>
 
@@ -161,6 +177,11 @@ function App() {
 
 
           <Route path="/advertiser_request" element={[<Adminlognav/>,<Advertiserrequest/>,<Footer/>]}/>
+          <Route path="/addrequests" element={[<Adminlognav/>,<Adminhome data="requests" url={url}/>,]}/>
+          <Route path="/viewsingleaddrequests/:id" element={[<Adminlognav/>,<Adminviewsinglerequest  url={url}/>,]}/>
+
+
+
 
           {/* 
               <Route path="/oneone" element={<HomePage/>}/>

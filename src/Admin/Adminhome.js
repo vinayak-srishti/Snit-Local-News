@@ -10,6 +10,9 @@ import Adminviewsingleadvertiser from './Adminviewsingleadvertiser'
 import Adminprivacy from './Adminprivacy'
 import Adminviewcontributer from './Adminviewcontributer'
 import Adminviewsinglecontributer from './Adminviewsinglecontributer'
+import Adminaddrequest from './Adminaddrequest'
+const url = "http://localhost:4004";
+
 
 function Adminhome({data}) {
   return (
@@ -31,6 +34,8 @@ function Adminhome({data}) {
           <Adminviewcontributer/>
         ):data =="viewsinglecontributer" ?(
           <Adminviewsinglecontributer/>
+        ):data=='requests'?(
+          <Adminaddrequest url={url}/>
         )
         :"" }
     </div>

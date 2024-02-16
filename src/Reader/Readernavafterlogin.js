@@ -31,7 +31,7 @@ function Readernavafterlogin() {
 
 
                 <li class="nav-item">
-                  <a class="nav-link " href="./readerhomelogin" >Home</a>
+                  <a class="nav-link " href="/readerhome" >Home</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="/readerpolitics">Politics</a>
