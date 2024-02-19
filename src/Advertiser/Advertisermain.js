@@ -8,11 +8,13 @@ import Aboutadvertiser from './Aboutadvertiser'
 import Privacyadvertiser from './Privacyadvertiser'
 
 function Advertisermain({data}) {
+  const url = "http://localhost:4004";
+
   return (
     <div style={{display:"flex"}}>
         <Advertisersidebar/>
         {data== "viewpro" ?(
-            <Advertiserviewuploads/>
+            <Advertiserviewuploads url={url}/>
         ): data=="uploadadd" ?(
             <Advertiserupload/>
         ):data=="viewaccountmy" ?(

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function ModeratorLogin() {
   const[moderator,setmoderator]=useState({username:"",password:""})
@@ -11,12 +12,13 @@ function ModeratorLogin() {
       ...moderator,[a.target.name]:a.target.value
     })
   }
-
+const navigate=useNavigate()
   const loginfn=((e)=>{
     e.preventDefault()
     if(username==moderator.username){
       if(password==moderator.password){
         alert("login successfully")
+        navigate("/moderatorrequest")
       }
       else{
         alert("password error")

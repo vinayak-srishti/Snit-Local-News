@@ -71,6 +71,7 @@ import Adminviewsinglerequest from "./Admin/Adminviewsinglerequest";
 import Comments from "./Reader/Comments";
 import Report from "./Reader/Report";
 import Contributerviewmynews from "./Contributor/Contributerviewmynews";
+import Contributerdltupdtnews from "./Contributor/Contributerdltupdtnews";
 
 function App() {
   //local
@@ -120,7 +121,7 @@ function App() {
           
           { /*Contributor*/}
           <Route path="/contributorsignup" element={<Contributorsignup />} />
-          <Route path="/contributerlogin" element={<ContributorLogin />} />
+          <Route path="/contributerlogin" element={[<Adminlognav/>,<ContributorLogin />]} />
           <Route path="/contributerforgetpswd" element={<Contributorforgetpswd />} />
           <Route path="/contributernavbar" element={<Contributernavbar />} />
           <Route path="/contributer_carousel" element={<Contributercarousle/>}/>
@@ -129,9 +130,13 @@ function App() {
           <Route path="/contributer_sidebar" element={<Contributersidebar/>}/>
           <Route path="/contributer_viewprofile" element={[<Contributernavbar />,<Contributerprofile data='contributerviewprofile'/>,<Footer/>]}/>
           <Route path="/contributer_editprofile" element={[<Contributernavbar />,<Contributerprofile data='contributereditprofile'/>,<Footer/>]}/>
+          <Route path="/about" element={[<Contributernavbar />,<Contributerprofile data='about'/>,<Footer/>]}/>
+          <Route path="/privacy" element={[<Contributernavbar />,<Contributerprofile data='privacy'/>,<Footer/>]}/>
 
           <Route path="/contributer_addnews" element={[<Contributernavbar />,<Contributeraddnews/>,<Footer/>]}/>
-          <Route path="/contributerviewnewsbyid" element={[<Contributernavbar />,<Contributerviewmynews/>,<Footer/>]}/>
+          <Route path="/contributerviewnewsbyid" element={[<Contributernavbar />,<Contributerviewmynews url={url}/>,<Footer/>]}/>
+          <Route path="/contributerdltupdtnews/:id" element={[<Contributernavbar />,<Contributerdltupdtnews url={url}/>,<Footer/>]}/>
+
 
           {/* Advertiser */}
           <Route path="/advertisersignin" element={<Advertisersignin />} />
@@ -151,11 +156,14 @@ function App() {
 
           {/* moderator */}
           <Route path="/moderatorlogin" element={[<Adminlognav/>,<ModeratorLogin/>]}/>
-          <Route path="/moderatorsidebar" element={[<Moderatorsidebar/>,<Footer/>]}/>
-          <Route path="/moderatorrequest" element={[<Moderatormain data="request"/>]}/>
+          <Route path="/moderatorsidebar" element={[<Adminlognav/>,<Moderatorsidebar/>,<Footer/>]}/>
+          <Route path="/moderatorrequest" element={[<Adminlognav/>,<Moderatormain data="request"/>,<Footer/>]}/>
           {/* <Route path="/req" element={<Moderatorrequest url={url}/>}/> */}
-          <Route path="/moderator_requests" element={[<Moderatormain data="requestm"/>,<Footer/>]}/>
-          <Route path="/moderator_singlerequest/:id" element={[<Moderatorsinglerequest url={url}/>]}/>
+          <Route path="/moderator_requests" element={[<Adminlognav/>,<Moderatormain data="requestm"/>,<Footer/>]}/>
+          <Route path="/moderator_singlerequest/:id" element={[<Adminlognav/>,<Moderatorsinglerequest url={url}/>,<Footer/>]}/>
+          <Route path="/aboutmod" element={[<Adminlognav/>,<Moderatormain data='about'/>,<Footer/>]}/>
+          <Route path="/privacymod" element={[<Adminlognav/>,<Moderatormain data='privacy'/>,<Footer/>]}/>
+
 
 
 

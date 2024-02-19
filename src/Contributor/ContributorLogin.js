@@ -20,7 +20,7 @@ function ContributorLogin() {
     if (result.data.status == 200) {
       localStorage.setItem("contibuterid", result.data.data._id);
       alert("login Sucessfully...");
-      navigate("/contributer_home")
+      navigate("/contributerviewnewsbyid")
       // window.location.reload(false)
     } else if (result.data.status==500) {
       // alert(result.data.msg);

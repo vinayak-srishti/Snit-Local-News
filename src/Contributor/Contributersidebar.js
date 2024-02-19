@@ -128,7 +128,7 @@ useEffect(()=>{
   </div>
 </div>
 </Link> */}
-<Link to='' >
+<Link to='/about' >
 <div className="reader_profile_sidebar_account_info">
   <div className="d-flex mt-2">
     <i class="ri-question-fill reader_profile_sidebar_icons"></i>
@@ -144,7 +144,7 @@ useEffect(()=>{
 
 </div>
 <div className="reader_profile_sidebar_padding ">
-<Link to='' >
+<Link to='/privacy' >
 <div className="reader_profile_sidebar_account_info">
   <div className="d-flex mt-2">
     <i class="ri-error-warning-fill reader_profile_sidebar_icons"></i>
@@ -158,7 +158,7 @@ useEffect(()=>{
 </Link>
 
 </div>
-<Link to='' ><div className="reader_profile_sidebar_logoybtn mt-4 mb-4">
+<Link to='/contributerlogin' ><div className="reader_profile_sidebar_logoybtn mt-4 mb-4">
 <button className="btn btn-secondary" 
 // onClick={handleLogout}
 >

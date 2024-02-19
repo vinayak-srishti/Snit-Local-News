@@ -56,7 +56,7 @@ const savefn=(()=>{
                     <Modal.Title>Report</Modal.Title>
                 </Modal.Header>
                 <Modal.Body style={{cursor:"pointer"}}>
-                    <Report />
+                    <Report nid={nid}/>
                 </Modal.Body>
                 {/* <Modal.Footer>
                     <Button variant="secondary" onClick={handleMenuModalClose}>

@@ -1,6 +1,7 @@
 .addupload_image img{
     width: 260px;
     height: 180px;
+    border-top-left-radius: 15px;
 }
 /* .add_rows{
     display: flex;
@@ -13,10 +14,13 @@
 
 .addupload_box{
     width: 260px;
-    height: 90px;
+    height: 100px;
     background-color: rgb(183, 181, 180);
     padding-left: 10px;
     overflow: hidden;
+    /* border-bottom-left-radius: 12px; */
+    border-bottom-right-radius: 15px;
+    
 }
 .addupload_main_padding{
     padding: 10px;

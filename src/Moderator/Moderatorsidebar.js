@@ -13,7 +13,7 @@ function Moderatorsidebar() {
 </div>
 </div> */}
 <div className="reader_profile_sidebar_title">
-<p>jjjj</p>
+<p>Moderator </p>
 </div>
 <div className="reader_profile_sidebar_settings reader_profile_sidebar_padding ">
 <i class="ri-settings-3-fill reader_profile_sidebar_icons"></i>
@@ -51,7 +51,7 @@ function Moderatorsidebar() {
 </div>
 
 <div className="reader_profile_sidebar_padding ">
-<Link to='' >
+{/* <Link to='' >
 <div className="reader_profile_sidebar_account_info">
   <div className="d-flex mt-2 ">
     <i class="ri-notification-3-fill reader_profile_sidebar_icons"></i>{" "}
@@ -62,7 +62,7 @@ function Moderatorsidebar() {
     <i class="ri-arrow-right-s-line reader_profile_sidebar_icons"></i>
   </div>
 </div>
-</Link>
+</Link> */}
 
 </div>
 <div className="reader_profile_sidebar_padding ">
@@ -109,7 +109,7 @@ function Moderatorsidebar() {
   </div>
 </div>
 </Link> */}
-<Link to='' >
+<Link to='/aboutmod' >
 <div className="reader_profile_sidebar_account_info">
   <div className="d-flex mt-2">
     <i class="ri-question-fill reader_profile_sidebar_icons"></i>
@@ -125,7 +125,7 @@ function Moderatorsidebar() {
 
 </div>
 <div className="reader_profile_sidebar_padding ">
-<Link to='' >
+<Link to='/privacymod' >
 <div className="reader_profile_sidebar_account_info">
   <div className="d-flex mt-2">
     <i class="ri-error-warning-fill reader_profile_sidebar_icons"></i>

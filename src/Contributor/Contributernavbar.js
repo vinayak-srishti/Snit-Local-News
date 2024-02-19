@@ -30,9 +30,9 @@ function Contributernavbar() {
           <ul class="navbar-nav nav nav-underline  ms-5 mb-2 mb-lg-0 user_nav_margin"  style={{ fontFamily:"inherit",fontWeight: 'bold' ,color:"black" }}>
 
 
-            <li class="nav-item">
+            {/* <li class="nav-item">
               <a class="nav-link " href="/contributer_home" >Home</a>
-            </li>
+            </li> */}
             <li class="nav-item">
               <a class="nav-link" href="/contributerviewnewsbyid">View Uploaded News</a>
             </li>

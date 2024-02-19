@@ -4,6 +4,8 @@ import Contributersidebar from './Contributersidebar'
 import Contributerviewprofile from './Contributerviewprofile'
 import Contributeraddnews from './Contributeraddnews'
 import Contributereditprofile from './Contributereditprofile'
+import Readreabout from '../Reader/Readreabout'
+import Readerprivicay from '../Reader/Readerprivicay'
 
 function Contributerprofile({data}) {
   return (
@@ -13,7 +15,11 @@ function Contributerprofile({data}) {
             <Contributerviewprofile/>
         ):data=== 'contributereditprofile' ?(
           <Contributereditprofile/>
-        ) :
+        ) :data==='about'?(
+          <Readreabout/>
+        ):data==='privacy' ?(
+          <Readerprivicay/>
+        ):
         ''}
     </div>
   )
