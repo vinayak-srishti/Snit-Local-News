@@ -44,31 +44,31 @@ function Savednews({url}) {
         " >
           {data.length ? (
             data.map((a) => {
-              const dateTime = new Date(a.newsid.date);
-              const timeString = dateTime.toLocaleTimeString();
+              // const dateTime = new Date(a.newsid.date);
+              // const timeString = dateTime.toLocaleTimeString();
               return (
                 <div className="col-3 reader-carousel2-box " style={{width:"260px"}}>
-                                  <Link to={"/viewallnewsbyid/"+a.newsid._id}  style={{ textDecoration: "none", color: "black" }} >
+                     <Link to={"/viewallnewsbyid/"+a.newsid?._id}  style={{ textDecoration: "none", color: "black" }} >
 
                   <div className="reader-carousel2-box-container">
                     {/* <div className=""> */}
                       {/* <div> */}
                         <img
-                          src={`${url}/${a.newsid.image.filename}`}
+                          src={`${url}/${a.newsid?.image.filename}`}
                           alt="bded"
                           width="300px"
                           height="190px"
                           style={{marginLeft:"-15px"}}
                         />
                       {/* </div> */}
-                      <p>{a.newsid.title}</p>
+                      <p>{a.newsid?.title}</p>
                       <div className="reader-carousel2-pro" style={{paddingTop:"0",marginTop:"40px"}}>
                         <span className="ri-map-pin-line" id="">
-                          {a.newsid.location}
+                          {a.newsid?.location}
                         </span>
-                        <span className="ri-calendar-line" id="" style={{paddingLeft:"30px"}}>
+                        {/* <span className="ri-calendar-line" id="" style={{paddingLeft:"30px"}}>
                           {timeString}
-                        </span>
+                        </span> */}
                       </div>
                     </div>
                   {/* </div> */}

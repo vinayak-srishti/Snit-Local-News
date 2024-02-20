@@ -1,8 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 import img from "../Assets/logo.png"
+import { Link, useNavigate } from 'react-router-dom';
 
 function Adminlognav() {
+  const navigate = useNavigate();
+  const [selectedOption, setSelectedOption] = useState('');
+
+  const handleOptionChange = (event) => {
+    const selectedValue = event.target.value;
+    setSelectedOption(selectedValue);
+    if (selectedValue === 'contributerlogin') {
+      navigate ('/contributerlogin'); // Navigate to the UserLogin page
+    }
+    else if(selectedValue === 'advertiserlogin'){
+      navigate('/advertiserlogin')
+    }
+    else if(selectedValue === 'moderatorlogin'){
+      navigate('/moderatorlogin')
+    }
+    else if(selectedValue === 'admin'){
+      navigate('/admin')
+    }
+    
+  }
+
   return (
+
     <div>
                               <div class="container-fluid ">
         <nav class="navbar navbar-expand-lg user_navbar ">
@@ -70,6 +93,25 @@ function Adminlognav() {
                 {/* </li> */}
               {/* </ul> */}
             {/* </div> */}
+
+            {/* <select value={selectedOption} onChange={handleOptionChange} style={{border:"none",fontWeight:"500"}}>
+              <option value="admin">Admin</option>
+              <option value="contributerlogin">Contributer</option>
+              <option value="advertiserlogin">Advertiser</option>
+              <option value="moderatorlogin">Moderator</option>
+
+            </select> */}
+            <div class="nav-item dropdown" style={{fontSize:"20px",fontWeight:"700",paddingRight:"60px"}}>
+                   <Link href="" class=" dropdown-toggle rjr_a" data-bs-toggle="dropdown" style={{textDecoration:"none"}}>User Role </Link>
+                   <div class="dropdown-menu rounded-0 m-0">
+                   <Link to='/admin' class="dropdown-item" style={{fontSize:"17px",fontWeight:"700"}}>Admin</Link>
+
+                       <Link to='/contributerlogin' class="dropdown-item" style={{fontSize:"17px",fontWeight:"700"}}>Contributor</Link>
+                       <Link to='/advertiserlogin' class="dropdown-item"style={{fontSize:"17px",fontWeight:"700"}}>Advertiser</Link>
+                       <Link to='/moderatorlogin' class="dropdown-item"style={{fontSize:"17px",fontWeight:"700"}}>Moderator</Link>
+
+                   </div>
+               </div>
           </div>
         </nav>
       </div>
