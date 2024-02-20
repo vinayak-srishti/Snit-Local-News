@@ -24,6 +24,15 @@
   padding-left: 1rem;
   
 }
+.reader_signin_input select{
+    color: #000;
+    width: 100%;
+  border-radius: 2px;
+  border: 2.5px solid #000;
+  height: 43px;
+  padding-left: 1rem;
+}
+
 .input_signin_input input::placeholder {
     color: black;
   }

@@ -7,8 +7,23 @@
     margin-top: 30PX;
     font-weight: 600;
 }
+
+.reader_login_inp{
+    text-align: center;
+}
+.forget_login{
+    padding-left: 100px;
+}
+.login_button{
+   width: 100px;
+   color: black;
+}
+.reader_box{
+    width: 50%;
+    margin: auto;
+}
 .input_text{
-    margin-left: 530px;
+    /* margin-left: 530px; */
     margin-top: 30px;
 
 }
@@ -31,3 +46,4 @@
 .input_text input::placeholder {
     color: black;
   }
+ 
