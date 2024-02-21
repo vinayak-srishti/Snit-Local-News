@@ -157,15 +157,15 @@ function App() {
 
           {/* moderator */}
           <Route path="/moderatorlogin" element={[<Adminlognav/>,<ModeratorLogin/>,<Footer/>]}/>
-          <Route path="/moderatorsidebar" element={[<Adminlognav/>,<Moderatorsidebar/>,<Footer/>]}/>
-          <Route path="/moderatorrequest" element={[<Adminlognav/>,<Moderatormain data="request"/>,<Footer/>]}/>
+          <Route path="/moderatorsidebar" element={[<Advertiserloginnav />,<Moderatorsidebar/>,<Footer/>]}/>
+          <Route path="/moderatorrequest" element={[<Advertiserloginnav />,<Moderatormain data="request"/>,<Footer/>]}/>
           {/* <Route path="/req" element={<Moderatorrequest url={url}/>}/> */}
-          <Route path="/moderator_requests" element={[<Adminlognav/>,<Moderatormain data="requestm"/>,<Footer/>]}/>
-          <Route path="/moderator_singlerequest/:id" element={[<Adminlognav/>,<Moderatorsinglerequest url={url}/>,<Footer/>]}/>
-          <Route path="/aboutmod" element={[<Adminlognav/>,<Moderatormain data='about'/>,<Footer/>]}/>
-          <Route path="/privacymod" element={[<Adminlognav/>,<Moderatormain data='privacy'/>,<Footer/>]}/>
-          <Route path="/allreports" element={[<Adminlognav/>,<Moderatormain data='allreports'/>,<Footer/>]}/>
-          <Route path="/singlerequest/:id" element={[<Adminlognav/>,<Viewsinglereport url={url}/>,<Footer/>]}/>
+          <Route path="/moderator_requests" element={[<Advertiserloginnav />,<Moderatormain data="requestm"/>,<Footer/>]}/>
+          <Route path="/moderator_singlerequest/:id" element={[<Advertiserloginnav />,<Moderatorsinglerequest url={url}/>,<Footer/>]}/>
+          <Route path="/aboutmod" element={[<Advertiserloginnav />,<Moderatormain data='about'/>,<Footer/>]}/>
+          <Route path="/privacymod" element={[<Advertiserloginnav />,<Moderatormain data='privacy'/>,<Footer/>]}/>
+          <Route path="/allreports" element={[<Advertiserloginnav />,<Moderatormain data='allreports'/>,<Footer/>]}/>
+          <Route path="/singlerequest/:id" element={[<Advertiserloginnav />,<Viewsinglereport url={url}/>,<Footer/>]}/>
 
 
 

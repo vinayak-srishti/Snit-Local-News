@@ -42,7 +42,7 @@ function Savednews({url}) {
         </div>
         <div className="row 
         " >
-          {data.length ? (
+          {data.length>0 ? (
             data.map((a) => {
               // const dateTime = new Date(a.newsid.date);
               // const timeString = dateTime.toLocaleTimeString();
