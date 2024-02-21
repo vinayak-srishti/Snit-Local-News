@@ -51,18 +51,18 @@ function Moderatorsidebar() {
 </div>
 
 <div className="reader_profile_sidebar_padding ">
-{/* <Link to='' >
+<Link to='/allreports' >
 <div className="reader_profile_sidebar_account_info">
   <div className="d-flex mt-2 ">
     <i class="ri-notification-3-fill reader_profile_sidebar_icons"></i>{" "}
-    <p> Notifications</p>
+    <p> View Reports</p>
   </div>
 
   <div className="mt-2">
     <i class="ri-arrow-right-s-line reader_profile_sidebar_icons"></i>
   </div>
 </div>
-</Link> */}
+</Link>
 
 </div>
 <div className="reader_profile_sidebar_padding ">

@@ -34,7 +34,7 @@ function Moderatorsinglerequest({ url }) {
                 if (res.data.status == 200) {
                     alert("Approved Successfully")
                     // window.location.reload(false)
-                    navigate("/req")
+                    navigate("/moderatorrequest")
 
                 }
                 else {
@@ -52,7 +52,7 @@ function Moderatorsinglerequest({ url }) {
             .then((res) => {
                 if (res.data.status == 200) {
                     alert("Deled Succesfully")
-                    navigate("/req")
+                    navigate("/moderatorrequest")
                 }
                 else {
                     alert("Error in delete")

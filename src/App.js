@@ -72,6 +72,7 @@ import Comments from "./Reader/Comments";
 import Report from "./Reader/Report";
 import Contributerviewmynews from "./Contributor/Contributerviewmynews";
 import Contributerdltupdtnews from "./Contributor/Contributerdltupdtnews";
+import Viewsinglereport from "./Moderator/Viewsinglereport";
 
 function App() {
   //local
@@ -121,7 +122,7 @@ function App() {
           
           { /*Contributor*/}
           <Route path="/contributorsignup" element={<Contributorsignup />} />
-          <Route path="/contributerlogin" element={[<Adminlognav/>,<ContributorLogin />]} />
+          <Route path="/contributerlogin" element={[<Adminlognav/>,<ContributorLogin />,<Footer/>]} />
           <Route path="/contributerforgetpswd" element={<Contributorforgetpswd />} />
           <Route path="/contributernavbar" element={<Contributernavbar />} />
           <Route path="/contributer_carousel" element={<Contributercarousle/>}/>
@@ -140,7 +141,7 @@ function App() {
 
           {/* Advertiser */}
           <Route path="/advertisersignin" element={<Advertisersignin />} />
-          <Route path="/advertiserlogin" element={[<Advertiserloginnav />, <AdvertiserLogin />]} />
+          <Route path="/advertiserlogin" element={[<Adminlognav/>, <AdvertiserLogin />,<Footer/>]} />
           <Route path="/advertiserloginnav" element={<Advertiserloginnav />} />
           <Route path="/advertiserforgetpswd" element={[<Advertiserloginnav />, <Advertiserforgetpswd />]} />
           <Route path="/advertiser_sidebar" element={[<Advertiserloginnav/>,<Advertisersidebar/>,<Footer/>]}/>
@@ -155,16 +156,16 @@ function App() {
 
 
           {/* moderator */}
-          <Route path="/moderatorlogin" element={[<Adminlognav/>,<ModeratorLogin/>]}/>
-          <Route path="/moderatorsidebar" element={[<Adminlognav/>,<Moderatorsidebar/>,<Footer/>]}/>
-          <Route path="/moderatorrequest" element={[<Adminlognav/>,<Moderatormain data="request"/>,<Footer/>]}/>
+          <Route path="/moderatorlogin" element={[<Adminlognav/>,<ModeratorLogin/>,<Footer/>]}/>
+          <Route path="/moderatorsidebar" element={[<Advertiserloginnav />,<Moderatorsidebar/>,<Footer/>]}/>
+          <Route path="/moderatorrequest" element={[<Advertiserloginnav />,<Moderatormain data="request"/>,<Footer/>]}/>
           {/* <Route path="/req" element={<Moderatorrequest url={url}/>}/> */}
-          <Route path="/moderator_requests" element={[<Adminlognav/>,<Moderatormain data="requestm"/>,<Footer/>]}/>
-          <Route path="/moderator_singlerequest/:id" element={[<Adminlognav/>,<Moderatorsinglerequest url={url}/>,<Footer/>]}/>
-          <Route path="/aboutmod" element={[<Adminlognav/>,<Moderatormain data='about'/>,<Footer/>]}/>
-          <Route path="/privacymod" element={[<Adminlognav/>,<Moderatormain data='privacy'/>,<Footer/>]}/>
-
-
+          <Route path="/moderator_requests" element={[<Advertiserloginnav />,<Moderatormain data="requestm"/>,<Footer/>]}/>
+          <Route path="/moderator_singlerequest/:id" element={[<Advertiserloginnav />,<Moderatorsinglerequest url={url}/>,<Footer/>]}/>
+          <Route path="/aboutmod" element={[<Advertiserloginnav />,<Moderatormain data='about'/>,<Footer/>]}/>
+          <Route path="/privacymod" element={[<Advertiserloginnav />,<Moderatormain data='privacy'/>,<Footer/>]}/>
+          <Route path="/allreports" element={[<Advertiserloginnav />,<Moderatormain data='allreports'/>,<Footer/>]}/>
+          <Route path="/singlerequest/:id" element={[<Advertiserloginnav />,<Viewsinglereport url={url}/>,<Footer/>]}/>
 
 
 
@@ -172,7 +173,7 @@ function App() {
 
           {/* Admin */}
           <Route path="/admin-loginnav" element={<Adminlognav/>}/>
-          <Route path="/admin" element={[<Adminlognav/>,<AdminLogin/>]}/>
+          <Route path="/admin" element={[<Adminlognav/>,<AdminLogin/>,<Footer/>]}/>
           <Route path="/admin_sidebar" element={[<Adminlognav/>,<Adminsidebar/>]}/>
           <Route path="/admin_viewuser" element={[<Adminlognav/>,<Adminhome data="viewuser"/>,<Footer/>]}/>
           <Route path="/admin_viewsingleuser/:id" element={[<Adminlognav/>,<Adminhome data="viewsingleuser"/>,<Footer/>]}/>

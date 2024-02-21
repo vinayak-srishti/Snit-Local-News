@@ -23,10 +23,15 @@ function Allnewsviewone({url}) {
     const handleMenuModalClose = () => {
         setShowMenuModal(false);
     };
-    const [showComments, setShowComments] = useState(false); 
+    // const [showComments, setShowComments] = useState(false); 
+    // const handleCommentsButtonClick = () => {
+    //     setShowComments(true);
+    // };
+    const [showComments, setShowComments] = useState(false);
     const handleCommentsButtonClick = () => {
-        setShowComments(true);
+        setShowComments(!showComments); // Toggle the state
     };
+
 
     useEffect(()=>{
         axiosInstance.post(`viewnewsById/${id.id}`)
@@ -92,7 +97,7 @@ console.log(data);
                 </Modal.Footer> */}
             </Modal>
             {showComments && <div className="footer-comments" style={{marginLeft:"100px"}}>
-                <Comments />
+                <Comments nid={id.id}/>
             </div>}
 </div>
 

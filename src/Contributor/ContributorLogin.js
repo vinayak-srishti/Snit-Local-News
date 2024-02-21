@@ -37,12 +37,12 @@ function ContributorLogin() {
 }
 
   return (
-    <div>
+    <div style={{height:"550px"}}>
       <div className='reader_login'>
       <div className='container'>
         <div className='row reader_box contributor_login'>
           <div className='col-sm-12'>
-            <h2 className='reader_login_title'>Login</h2>
+            <h2 className='reader_login_title'>Contributor Login</h2>
           </div>
           <form className='reader_login_inp' onSubmit={submitfn} >
           <div className='col-sm-12 input_text'>
