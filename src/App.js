@@ -174,15 +174,15 @@ function App() {
           {/* Admin */}
           <Route path="/admin-loginnav" element={<Adminlognav/>}/>
           <Route path="/admin" element={[<Adminlognav/>,<AdminLogin/>,<Footer/>]}/>
-          <Route path="/admin_sidebar" element={[<Adminlognav/>,<Adminsidebar/>]}/>
-          <Route path="/admin_viewuser" element={[<Adminlognav/>,<Adminhome data="viewuser"/>,<Footer/>]}/>
-          <Route path="/admin_viewsingleuser/:id" element={[<Adminlognav/>,<Adminhome data="viewsingleuser"/>,<Footer/>]}/>
-          <Route path="/admin_dashboard" element={[<Adminlognav/>,<Adminhome data='admindashboard'/>,<Footer/>]}/>
-          <Route path="/admin_viewadvertiser" element={[<Adminlognav/>,<Adminhome data='viewadvertiser'/>,<Footer/>]}/>
-          <Route path="/viewsingleadvertiser/:id" element={[<Adminlognav/>,<Adminhome data='viewsingleadvertiser'/>,<Footer/>]}/>
-          <Route path="/adminprivacy" element={[<Adminlognav/>,<Adminhome data='adminprivacy'/>,<Footer/>]}/>
-          <Route path="/adminviewcontributer" element={[<Adminlognav/>,<Adminhome data='viewcontributer'/>,<Footer/>]}/>
-          <Route path="/admin_viewsinglecontributer/:id" element={[<Adminlognav/>,<Adminhome data='viewsinglecontributer'/>,<Footer/>]}/>
+          <Route path="/admin_sidebar" element={[<Advertiserloginnav />,<Adminsidebar/>]}/>
+          <Route path="/admin_viewuser" element={[<Advertiserloginnav />,<Adminhome data="viewuser"/>,<Footer/>]}/>
+          <Route path="/admin_viewsingleuser/:id" element={[<Advertiserloginnav />,<Adminhome data="viewsingleuser"/>,<Footer/>]}/>
+          <Route path="/admin_dashboard" element={[<Advertiserloginnav />,<Adminhome data='admindashboard'/>,<Footer/>]}/>
+          <Route path="/admin_viewadvertiser" element={[<Advertiserloginnav />,<Adminhome data='viewadvertiser'/>,<Footer/>]}/>
+          <Route path="/viewsingleadvertiser/:id" element={[<Advertiserloginnav />,<Adminhome data='viewsingleadvertiser'/>,<Footer/>]}/>
+          <Route path="/adminprivacy" element={[<Advertiserloginnav />,<Adminhome data='adminprivacy'/>,<Footer/>]}/>
+          <Route path="/adminviewcontributer" element={[<Advertiserloginnav />,<Adminhome data='viewcontributer'/>,<Footer/>]}/>
+          <Route path="/admin_viewsinglecontributer/:id" element={[<Advertiserloginnav />,<Adminhome data='viewsinglecontributer'/>,<Footer/>]}/>
 
 
           <Route path="/advertiser_request" element={[<Adminlognav/>,<Advertiserrequest/>,<Footer/>]}/>
