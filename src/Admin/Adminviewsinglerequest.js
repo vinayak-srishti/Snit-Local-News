@@ -43,6 +43,8 @@ function Adminviewsinglerequest({url}) {
         b.preventDefault()
         axiosInstance.post(`rejectreq/${id.id}`)
             .then((res) => {
+                // console.log(id.id+"hell");
+                console.log(res);
                 if (res.data.status == 200) {
                     alert("Deled Succesfully")
                     navigate("/addrequests")

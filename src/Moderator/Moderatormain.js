@@ -13,7 +13,7 @@ function Moderatormain({data}) {
     <div style={{display:"flex"}}>
         <Moderatorsidebar/>
         {data=="request" ?(
-            <Moderatorrequest/>
+            <Moderatorrequest url={url}/>
         ):data==='about' ?(
           <Readreabout/>
         ):data==="privacy" ?(

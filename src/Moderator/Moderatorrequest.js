@@ -35,10 +35,17 @@ function Moderatorrequest({url}) {
             <div className='admin_advertiser_request' style={{ display: 'flex',marginLeft:"20px" ,marginTop:"10px"}} >
                     <img src={`${url}/${a.image.filename}`} alt='image' width='130px' height='100px'/>
                     <div>
-                    <h4>{a.title}</h4>
+                    <h4
+                     style={{
+                        overflow: "hidden",
+                        textOverflow: "ellipsis",
+                        whiteSpace: "nowrap",
+                        maxWidth: "500px",
+                      }}
+                    >{a.title}</h4>
                     <p id='arrow'>{a.contributorid.firstname}</p>
                     </div>
-                    <div className='admin_advertiser_time'>
+                    <div className='admin_advertiser_time' style={{paddingLeft:"50px"}}>
                         <p>{timeString}</p>
                         <div id='arrow' className='ri-arrow-right-s-line'></div>
                     </div>

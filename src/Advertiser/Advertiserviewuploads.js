@@ -57,15 +57,15 @@ function Advertiserviewuploads({url}) {
                                         overflow: 'hidden',
                                         textOverflow: 'ellipsis',
                                         display: '-webkit-box',
-                                        WebkitLineClamp: 2,
+                                        WebkitLineClamp: 1,
                                         WebkitBoxOrient: 'vertical'
                                       }}
                                     >{item.content}</p>
                                     {hoveredIndex === index && (
-                                        <div className='icon-container'>
+                                      <Link to={"/addsviewbyid/"+item._id} style={{textDecoration:"none",color:"black"}}>  <div className='icon-container'>
                                             {/* Place your icon here */}
                                             <i className='ri-edit-2-line'></i>
-                                        </div>
+                                        </div></Link>
                                     )}
                                 </div>
                             </div>
