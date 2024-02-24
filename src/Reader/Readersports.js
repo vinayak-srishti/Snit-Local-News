@@ -43,7 +43,7 @@ function Readersports() {
                 
     <div className='row'>
       <div className='col-md-5 readre_politics_image'>
-        <img src={`${url.baseurl}/${a.image.filename}`} alt='images'/>
+        <img src={`${url.baseurl}/${a.image.filename}`} alt='images'  width="400px" height="300px" />
       </div>
       <div className='col-md-6 offset-md-1  reader_politics_text'>
       <h2>"{a.title}"</h2>

@@ -23,12 +23,13 @@ function Comments({ nid }) {
 
   const submitfn = (a) => {
     a.preventDefault();
+    
     axiosInstance
       .post(`addcomment`, data)
       .then((response) => {
         console.log(response);
         if (response.data.status == 200) {
-          alert("Comment Inserted Successfully");
+          // alert("Comment Inserted Successfully");
           setdata({ ...data, msg: "" });
            setres([...res, response.data.data]);
         }
@@ -40,7 +41,7 @@ function Comments({ nid }) {
 
 
   useEffect(()=>{
-    axiosInstance.post(`viewallcomments`)
+    axiosInstance.post(`viewcommentsbynewsid/${nid}`)
     .then((res)=>{
       console.log(res);
       setres(res.data.data)
@@ -103,6 +104,7 @@ function Comments({ nid }) {
                 name="msg"
                 value={data.msg}
                 onChange={changefn}
+                required title="please add a comment"
               ></textarea>
             </div>
           </div>

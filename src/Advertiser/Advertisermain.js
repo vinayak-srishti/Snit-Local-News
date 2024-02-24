@@ -6,6 +6,7 @@ import Advertiserviewaccount from './Advertiserviewaccount'
 import Advertisereditprofile from './Advertisereditprofile'
 import Aboutadvertiser from './Aboutadvertiser'
 import Privacyadvertiser from './Privacyadvertiser'
+import Advertisementviewsingleadds from './Advertisementviewsingleadds'
 
 function Advertisermain({data}) {
   const url = "http://localhost:4004";

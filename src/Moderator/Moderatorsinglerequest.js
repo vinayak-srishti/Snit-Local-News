@@ -69,7 +69,7 @@ function Moderatorsinglerequest({ url }) {
             <div className='container'>
                 <div className='row'>
                     <div className='col-2  contributer_arrow'>
-                        <Link to='/req'> <img src={img} alt='images' width='40px' height='40px' /></Link>
+                        <Link to='/moderatorrequest'> <img src={img} alt='images' width='40px' height='40px' /></Link>
                     </div>
                     <div className='col-6 contributer_arrow'>
                         <h2>Requests</h2>
@@ -84,7 +84,7 @@ function Moderatorsinglerequest({ url }) {
                     </label>
                   */}
                             <p style={{ fontSize: "20px" }}>Contributer Name:
-                                {/* {data.contributorid.firstname} */}
+                                {data.contributorid?.firstname}
                             </p>
                             <p style={{ fontSize: "20px" }}>Location:{data.location}</p>
 
@@ -104,7 +104,7 @@ function Moderatorsinglerequest({ url }) {
                                 // required
                                 />
                             </div>
-                            <div className='row contributer_addnewsone '>
+                            <div className='row contributer_addnewsone ' style={{paddingTop:"20px"}}>
                                 <h4>Category</h4>
                             </div>
 

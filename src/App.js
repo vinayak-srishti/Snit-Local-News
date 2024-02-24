@@ -73,6 +73,7 @@ import Report from "./Reader/Report";
 import Contributerviewmynews from "./Contributor/Contributerviewmynews";
 import Contributerdltupdtnews from "./Contributor/Contributerdltupdtnews";
 import Viewsinglereport from "./Moderator/Viewsinglereport";
+import Advertisementviewsingleadds from "./Advertiser/Advertisementviewsingleadds";
 
 function App() {
   //local
@@ -85,7 +86,7 @@ function App() {
           {/* Readrer */}
           <Route path="/" element={[<Readernav />, <Readerhomecarousle /> ,<Readercarousel2 url={url}/>,<Readerhome3 url={url}/>,<Footer/>]} />
           <Route path="/readersignin" element={[<Readernavonlogin />, <Readersignin />]} />
-          <Route path="/readerlogin" element={[<Readernav />, <ReaderLogin />]} />
+          <Route path="/readerlogin" element={[<Adminlognav/>, <ReaderLogin />]} />
           <Route path="/readernav" element={<Readernav />} />
           <Route path="/politicslogin"element={[<Readernav />,<Readerpoliticspage  url={url} />,<Footer/>]}/>
           <Route path="/sportslogin"element={[<Readernav />,<Readersports url={url}/>,<Footer/>]}/>
@@ -153,6 +154,7 @@ function App() {
 
 
           <Route path="/advertiser_upload" element={[<Advertiserloginnav/>,<Advertiserupload/>,<Footer/>]}/>
+          <Route path="/addsviewbyid/:id" element={[<Advertiserloginnav/>,<Advertisementviewsingleadds url={url}/>,<Footer/>]}/>
 
 
           {/* moderator */}

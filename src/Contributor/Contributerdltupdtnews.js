@@ -46,19 +46,6 @@ function Contributerdltupdtnews({ url }) {
     console.log(data);
   };
 
-  // const submitupdate = () => {
-  //   // e.preventDefault()
-  //   axiosInstance
-  //     .post(`updatenews/${id}`, data)
-  //     .then((res) => {
-  //       if (res.data.status === 200) {
-  //         alert("Updated successfully");
-  //       }
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
 
   const submitupdate = (e) => {
     e.preventDefault();
@@ -83,7 +70,13 @@ function Contributerdltupdtnews({ url }) {
   
     // Send formData instead of the plain data object
     axiosInstance
-      .post(`updatenews/${id}`, formData)
+      .post(`updatenews/${id}`, formData,
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
+
       .then((res) => {
         if (res.data.status === 200) {
           alert('Updated successfully');
