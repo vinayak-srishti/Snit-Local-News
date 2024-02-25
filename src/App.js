@@ -187,9 +187,10 @@ function App() {
           <Route path="/admin_viewsinglecontributer/:id" element={[<Advertiserloginnav />,<Adminhome data='viewsinglecontributer'/>,<Footer/>]}/>
 
 
-          <Route path="/advertiser_request" element={[<Adminlognav/>,<Advertiserrequest/>,<Footer/>]}/>
-          <Route path="/addrequests" element={[<Adminlognav/>,<Adminhome data="requests" url={url}/>,]}/>
-          <Route path="/viewsingleaddrequests/:id" element={[<Adminlognav/>,<Adminviewsinglerequest  url={url}/>,]}/>
+          <Route path="/advertiser_request" element={[<Advertiserloginnav />,<Advertiserrequest/>,<Footer/>]}/>
+          <Route path="/addrequests" element={[<Advertiserloginnav />,<Adminhome data="requests" url={url}/>,]}/>
+          <Route path="/viewsingleaddrequests/:id" element={[<Advertiserloginnav />,<Adminviewsinglerequest  url={url}/>,]}/>
+          {/* <Route path="/addsubscription" element={} */}
 
 
 
