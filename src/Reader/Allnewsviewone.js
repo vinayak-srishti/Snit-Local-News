@@ -48,6 +48,23 @@ function Allnewsviewone({url}) {
         })
     },[])
     // console.log(data.data.image.filename);
+    
+    const [latestAdds, setLatestAdds] = useState([]);
+
+    useEffect(() => {
+      axiosInstance.post(`viewalladds`)
+        .then((res) => {
+          console.log(res);
+          setLatestAdds(res.data.msg);
+          console.log(res.data.msg);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }, []);
+    
+    const latestAdd = latestAdds.length > 0 ? latestAdds[latestAdds.length - 1] : null;
+
 console.log(data);
     const dateTime = new Date(data.date);
     const timeString = dateTime.toLocaleTimeString();
@@ -75,7 +92,22 @@ console.log(data);
             <h2>"{data.title}"</h2>
         </div>
         <div className='row reader_viewone-text'>
-            <p>{data.content}<br/>{data.subcontent}
+            <p>{data.content}<br/><br/>
+
+        {/* Advertisements */}
+
+
+            {latestAdd && (
+        <div>
+          <img src={`${url}/${latestAdd.image.filename}`} alt={`Latest Ad`} width="1100px" height="500px" style={{borderRadius:"12px"}}/><br />
+        </div>
+      )}
+
+
+
+
+
+            {data.subcontent}
             </p>
         </div>
         <div className='reader_viewone-likesdislikes '>
