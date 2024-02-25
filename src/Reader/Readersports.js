@@ -1,12 +1,14 @@
 import React, { useEffect,useState } from 'react'
 import img from "../Assets/bunpic.png"
 import axiosInstance from '../BaseUrl'
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 function Readersports() {
   const url={baseurl:"http://localhost:4004"}
   const [category, setCategory] = useState('Sports');
   const [newsData, setNewsData] = useState([]);
+
+  const location=useLocation()
 
 
   const viewallnewsbycategory=(()=>{
@@ -49,7 +51,7 @@ function Readersports() {
       <h2>"{a.title}"</h2>
       <p>{a.content}
       {storedReaderId ?(
-      <Link to={"/viewallnewsbyid/"+a._id}><button type='submit' className='readmorebtn'>Read more</button></Link>
+      <Link to={`/viewallnewsbyid/${a._id}?prevPage=${encodeURIComponent(location.pathname)}`}><button type='submit' className='readmorebtn'>Read more</button></Link>
       ):(
         <button type='submit' className='readmorebtn'>Read more</button>
       )}

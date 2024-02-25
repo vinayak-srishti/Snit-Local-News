@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react'
 import "../Reader/Readerpoliticspage.css"
 import img from "../Assets/bunpic.png"
 import axiosInstance from '../BaseUrl'
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 function Others({url}) {
 
     const [isLiked, setIsLiked] = useState(false);
   const [isDisliked, setIsDisliked] = useState(false);
-
+const location=useLocation()
 
   const [likes, setLikes] = useState(0);
   const [dislikes, setDislikes] = useState(0);
@@ -67,7 +67,7 @@ function Others({url}) {
               <h2>"{a.title}"</h2>
               <p>{a.content}</p>
               {storedReaderId ? (
-                <Link to={"/viewallnewsbyid/" + a._id}>
+                <Link to={`/viewallnewsbyid/${a._id}?prevPage=${encodeURIComponent(location.pathname)}`}>
                   <button type='submit' className='readmorebtn'>Read more</button>
                 </Link>
               ) : (
