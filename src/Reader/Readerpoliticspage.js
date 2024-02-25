@@ -2,12 +2,15 @@ import React, { useEffect, useState } from 'react'
 import "../Reader/Readerpoliticspage.css"
 import img from "../Assets/bunpic.png"
 import axiosInstance from '../BaseUrl'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
+import img2 from "../Assets/rightarrow.png"
+
 
 
 function Readerpoliticspage({url}) {
   const[category,setCategory]=useState('Politics')
   const[data,setData]=useState({})
+  const location = useLocation();
   useEffect(()=>{
     axiosInstance.post(`viewallNewsByCategory`,{category})
     .then((res)=>{
@@ -38,6 +41,7 @@ function Readerpoliticspage({url}) {
                     const timeString = dateTime.toLocaleTimeString();
                     // console.log(a.image.filename);
                return(
+                
               
     <div className='row' key={a._id}>
         
@@ -48,7 +52,7 @@ function Readerpoliticspage({url}) {
       <h2>"{a.title}"</h2>
       <p>{a.content}
       {storedReaderId ? (
-  <Link to={"/viewallnewsbyid/" + a._id}><button type='submit' className='readmorebtn'>Read more</button></Link>
+  <Link to={`/viewallnewsbyid/${a._id}?prevPage=${encodeURIComponent(location.pathname)}`}><button type='submit' className='readmorebtn'>Read more</button></Link>
 ) : (
   <button type='submit' className='readmorebtn'>Read more</button>
 )}      </p>

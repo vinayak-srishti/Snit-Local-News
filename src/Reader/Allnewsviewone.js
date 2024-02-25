@@ -4,7 +4,7 @@ import img from "../Assets/rightarrow.png"
 import img1 from "../Assets/bunpic.png"
 import imgopt from "../Assets/option.png"
 import Popup from "reactjs-popup"
-import { Link, useParams } from 'react-router-dom'
+import { Link, useLocation, useParams } from 'react-router-dom'
 import axiosInstance from '../BaseUrl'
 import Menu from './Menu'
 import { Modal,Button } from 'react-bootstrap'
@@ -13,6 +13,10 @@ import Comments from './Comments'
 
 function Allnewsviewone({url}) {
     const id=useParams()
+    const location = useLocation();
+    const prevPage = new URLSearchParams(location.search).get('prevPage');
+
+
     const[data,setdata]=useState({ image: { filename: ''  }})
 
     const [showMenuModal, setShowMenuModal] = useState(false);
@@ -52,7 +56,7 @@ console.log(data);
     <div className='container reader_viewone'  style={{margin:"30px"}}>
     <div className='row'>
         <div className='reader_viewone col-1 '>
-           {/* <Link to="/others"><img src={img} alt='imageartrow' width='40px' height='40px' /></Link>  */}
+           <Link to={prevPage || '/'}><img src={img} alt='imageartrow' width='40px' height='40px' /></Link> 
         </div>
         <div className='reader_viewone col-10 '>
             <h2>{data.category}</h2>

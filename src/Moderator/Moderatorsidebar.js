@@ -109,7 +109,7 @@ function Moderatorsidebar() {
   </div>
 </div>
 </Link> */}
-<Link to='/aboutmod' >
+{/* <Link to='/aboutmod' >
 <div className="reader_profile_sidebar_account_info">
   <div className="d-flex mt-2">
     <i class="ri-question-fill reader_profile_sidebar_icons"></i>
@@ -122,7 +122,7 @@ function Moderatorsidebar() {
   </div>
 </div>
 </Link>
-
+ */}
 </div>
 <div className="reader_profile_sidebar_padding ">
 <Link to='/privacymod' >
@@ -139,7 +139,7 @@ function Moderatorsidebar() {
 </Link>
 
 </div>
-<Link to='' ><div className="reader_profile_sidebar_logoybtn mt-4 mb-4">
+<Link to='/moderatorlogin' ><div className="reader_profile_sidebar_logoybtn mt-4 mb-4">
 <button className="btn btn-secondary" 
 // onClick={handleLogout}
 >

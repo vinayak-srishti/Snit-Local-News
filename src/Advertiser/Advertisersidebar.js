@@ -109,7 +109,7 @@ function Advertisersidebar() {
   </div>
 </div>
 </Link> */}
-<Link to='/advertiser_about' >
+{/* <Link to='/advertiser_about' >
 <div className="reader_profile_sidebar_account_info">
   <div className="d-flex mt-2">
     <i class="ri-question-fill reader_profile_sidebar_icons"></i>
@@ -121,7 +121,7 @@ function Advertisersidebar() {
     <p></p>
   </div>
 </div>
-</Link>
+</Link> */}
 
 </div>
 <div className="reader_profile_sidebar_padding ">
@@ -139,7 +139,7 @@ function Advertisersidebar() {
 </Link>
 
 </div>
-<Link to='' ><div className="reader_profile_sidebar_logoybtn mt-4 mb-4">
+<Link to='/advertiserlogin' ><div className="reader_profile_sidebar_logoybtn mt-4 mb-4">
 <button className="btn btn-secondary" 
 // onClick={handleLogout}
 >

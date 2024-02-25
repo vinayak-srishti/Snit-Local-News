@@ -70,7 +70,7 @@ useEffect(()=>{
 </div>
 
 <div className="reader_profile_sidebar_padding ">
-<Link to='' >
+{/* <Link to='' >
 <div className="reader_profile_sidebar_account_info">
   <div className="d-flex mt-2 ">
     <i class="ri-notification-3-fill reader_profile_sidebar_icons"></i>{" "}
@@ -81,7 +81,7 @@ useEffect(()=>{
     <i class="ri-arrow-right-s-line reader_profile_sidebar_icons"></i>
   </div>
 </div>
-</Link>
+</Link> */}
 
 </div>
 <div className="reader_profile_sidebar_padding ">
@@ -128,7 +128,7 @@ useEffect(()=>{
   </div>
 </div>
 </Link> */}
-<Link to='/about' >
+{/* <Link to='/about' >
 <div className="reader_profile_sidebar_account_info">
   <div className="d-flex mt-2">
     <i class="ri-question-fill reader_profile_sidebar_icons"></i>
@@ -140,7 +140,7 @@ useEffect(()=>{
     <p></p>
   </div>
 </div>
-</Link>
+</Link> */}
 
 </div>
 <div className="reader_profile_sidebar_padding ">

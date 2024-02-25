@@ -137,7 +137,7 @@ const handleLogout = () => {
           </div>
         </div>
         </Link>
-        <Link to='/reader_about' >
+        {/* <Link to='/reader_about' >
         <div className="reader_profile_sidebar_account_info">
           <div className="d-flex mt-2">
             <i class="ri-question-fill reader_profile_sidebar_icons"></i>
@@ -149,7 +149,7 @@ const handleLogout = () => {
             <p></p>
           </div>
         </div>
-        </Link>
+        </Link> */}
 
       </div>
       <div className="reader_profile_sidebar_padding ">

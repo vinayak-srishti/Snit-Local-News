@@ -21,6 +21,9 @@ function Adminlognav() {
     else if(selectedValue === 'admin'){
       navigate('/admin')
     }
+    else if(selectedValue == 'readerlogin'){
+      navigate('/readerlogin')
+    }
     
   }
 
@@ -109,6 +112,7 @@ function Adminlognav() {
                        <Link to='/contributerlogin' class="dropdown-item" style={{fontSize:"17px",fontWeight:"700"}}>Contributor</Link>
                        <Link to='/advertiserlogin' class="dropdown-item"style={{fontSize:"17px",fontWeight:"700"}}>Advertiser</Link>
                        <Link to='/moderatorlogin' class="dropdown-item"style={{fontSize:"17px",fontWeight:"700"}}>Moderator</Link>
+                       <Link to='/readerlogin' class="dropdown-item"style={{fontSize:"17px",fontWeight:"700"}}>Reader</Link>
 
                    </div>
                </div>
