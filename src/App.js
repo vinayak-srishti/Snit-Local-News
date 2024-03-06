@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap/dist/js/bootstrap.bundle.min.js"
@@ -74,13 +73,15 @@ import Contributerviewmynews from "./Contributor/Contributerviewmynews";
 import Contributerdltupdtnews from "./Contributor/Contributerdltupdtnews";
 import Viewsinglereport from "./Moderator/Viewsinglereport";
 import Advertisementviewsingleadds from "./Advertiser/Advertisementviewsingleadds";
+import Viewsingleadvertiserreq from "./Admin/Viewsingleadvertiserreq";
 
 function App() {
   //local
   const url = "http://localhost:4004";
+  // const url="http://hybrid.srishticampus.in:4003/local_news_aggregator/upload"
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/local_news_aggregator">
       <div>
         <Routes>
           {/* Readrer */}
@@ -168,8 +169,8 @@ function App() {
           <Route path="/privacymod" element={[<Advertiserloginnav />,<Moderatormain data='privacy'/>,<Footer/>]}/>
           <Route path="/allreports" element={[<Advertiserloginnav />,<Moderatormain data='allreports'/>,<Footer/>]}/>
           <Route path="/singlerequest/:id" element={[<Advertiserloginnav />,<Viewsinglereport url={url}/>,<Footer/>]}/>
-
-
+          <Route path="/contributerrequest" element={[<Advertiserloginnav />,<Moderatormain data='contributerrequest'/>,<Footer/>]}/>
+          <Route path="/viewsinglecontributer/:id" element={[<Advertiserloginnav />,<Moderatormain data='viewsinglecontributer'/>,<Footer/>]}/>
 
 
 
@@ -190,7 +191,9 @@ function App() {
           <Route path="/advertiser_request" element={[<Advertiserloginnav />,<Advertiserrequest/>,<Footer/>]}/>
           <Route path="/addrequests" element={[<Advertiserloginnav />,<Adminhome data="requests" url={url}/>,]}/>
           <Route path="/viewsingleaddrequests/:id" element={[<Advertiserloginnav />,<Adminviewsinglerequest  url={url}/>,]}/>
-          {/* <Route path="/addsubscription" element={} */}
+          <Route path="/addsubscription" element={[<Advertiserloginnav />,<Adminhome data='addsubscription'/>,<Footer/>]}/>
+          <Route path="/viewsubscription" element={[<Advertiserloginnav />,<Adminhome data='viewsubscription'/>,<Footer/>]}/>
+          <Route path="/Viewsingleadvertiserreq/:id" element={[<Advertiserloginnav />,<Viewsingleadvertiserreq/>,<Footer/>]}/>
 
 
 

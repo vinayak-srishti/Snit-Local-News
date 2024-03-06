@@ -9,7 +9,7 @@ function Adminviewsingleadvertiser() {
     const id=useParams()
     const[data,setdata]=useState({})
 useEffect(()=>{
-    axiosInstance.post(`/viewsingleadvertiser/${id.id}`,data)
+    axiosInstance.post(`/viewoneadvertiser/${id.id}`,data)
     .then((res)=>{
         setdata(res.data.data)
         console.log(res.data.data);

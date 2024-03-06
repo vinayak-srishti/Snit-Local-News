@@ -66,10 +66,10 @@ function Admindashboard() {
                         < p>Advertiser Count</p>
                         <h1 id='count'>{advertiser.length}</h1>
                     </div>
-                    <div className='admin_dashboard_box col-2'>
+                    {/* <div className='admin_dashboard_box col-2'>
                         <p>Moderator Count</p>
                         <h1 id='count'>1</h1>
-                    </div>
+                    </div> */}
                 </div>
                 <div className='row'>
                     <div className='admin_dashboard_text'>
@@ -80,8 +80,8 @@ function Admindashboard() {
                     <div className='admindashboard_users' style={{ display: 'flex' }}>
                         <p className='col-2'>Reg no</p>
                         <p className='col-2'>Name</p>
-                        <p className='col-2'>Status </p>
-                        <p className='col-3'>Account Status</p>
+                        <p className='col-4'>Email </p>
+                        {/* <p className='col-3'>Account Status</p> */}
                         {/* <p className='col-2'>Activity</p> */}
                         <p className='col-4'>Location</p>
                     </div>
@@ -90,8 +90,8 @@ function Admindashboard() {
                             <div className='admindashboard_users_list' style={{ display: 'flex' }}>
                                 <p className='col-2'>784</p>
                                 <p className='col-2'>{a.firstname}</p>
-                                <p className='col-2'>Paid </p>
-                                <p className='col-3'>Activite</p>
+                                <p className='col-4'>{a.email} </p>
+                                {/* <p className='col-3'>Activite</p> */}
 
                                 <p className='col-4'>{a.street},{a.state}</p>
                             </div>

@@ -25,7 +25,7 @@ function Savednews({url}) {
     .then((res)=>{
       console.log(res);
       if(res.data.status==200){
-        alert("Deleted Successfully")
+        alert("News Removed Successfully")
         window.location.reload(false)
       }
     })

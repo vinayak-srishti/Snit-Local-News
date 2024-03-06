@@ -81,12 +81,12 @@ const location=useLocation()
               <div className='like-dislike-buttons'>
                 {storedReaderId && (
                   <>
-                    <button type='button' className={`ri-thumb-up-line ${isLiked ? 'liked' : ''}`} style={{ color: isLiked ? 'black' : 'inherit' }} onClick={() => { handleLike(); handleLikes(); }}>
+                    {/* <button type='button' className={`ri-thumb-up-line ${isLiked ? 'liked' : ''}`} style={{ color: isLiked ? 'black' : 'inherit' }} onClick={() => { handleLike(); handleLikes(); }}>
                       <span>{likes}{isLiked ? ' Liked' : ''}</span>
                     </button>
                     <button type='button' className={`ri-thumb-down-line ${isDisliked ? 'disliked' : ''}`} style={{ color: isDisliked ? 'black' : 'inherit' }} onClick={() => { handleDislike(); handleDislikes(); }}>
                       <span>{isDisliked ? ' Disliked' : ''}</span>
-                    </button>
+                    </button> */}
                   </>
                 )}
                 <button className='ri-user-line' id='reader_usename'>Rahul</button>

@@ -38,25 +38,27 @@ function Adminviewuser() {
             <div className='row'>
             <div className='reader_viewuser_boxes '>
               <div  style={{ display: 'flex' }}>
-              <p className='col-2'>Regno</p>
+              {/* <p className='col-2'>Regno</p> */}
               <p className='col-2'>Name</p>
-              <p className='col-2'>Status</p>
-              <p className='col-2'>Account Status</p>
+              {/*<p className='col-2'>Account Status</p> */}
               <p className='col-4'>Loction</p>
+              <p className='col-2'>Email</p>
+
               </div>
             </div>
             </div>
             {data.length ? (
           data.map((a) => (
-            <Link to={"/admin_viewsingleuser/"+a.id }style={{textDecoration:'none', color: 'black' }}>
+            <Link to={"/admin_viewsingleuser/"+a._id }style={{textDecoration:'none', color: 'black' }}>
               <div className='row'>
               <div className='reader_viewuser_boxes ' style={{ display: 'flex' }}> 
                          
-              <p className='col-2'>Regno</p>
+              {/* <p className='col-2'>Regno</p> */}
               <p className='col-2' >{a.firstname}</p>
-              <p className='col-2'>Status</p>
-              <p className='col-2'>account</p>
+              {/*  <p className='col-2'>account</p> */}
               <p className='col-4'>{a.city},{a.street},{a.nationality}</p>
+              <p className='col-2'>{a.email}</p>
+
             </div>
             </div></Link>
           ))

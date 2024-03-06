@@ -22,11 +22,13 @@ function ContributorLogin() {
       alert("login Sucessfully...");
       navigate("/contributerviewnewsbyid")
       // window.location.reload(false)
-    } else if (result.data.status==500) {
+    } else if (result.data.status==401) {
       // alert(result.data.msg);
         alert("password mismatch")
+    }else if(result.data.status==400){
+      alert("user not found")
     }
-    else {
+    else  {
       alert(result.data.msg)
     }
   })

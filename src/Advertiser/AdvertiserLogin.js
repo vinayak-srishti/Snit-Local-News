@@ -23,7 +23,7 @@ function AdvertiserLogin() {
           // window.location.reload(false)
         } else if (result.data.status == 500) {
           // alert(result.data.msg);
-          alert("password mismatch")
+          alert(result.data.msg)
         }
         else {
           alert(result.data.msg)

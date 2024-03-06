@@ -70,7 +70,7 @@ function Adminsidebar() {
         <div className="admin_profile_sidebar_account_info">
           <div className="d-flex mt-2 ">
             <i class="ri-sticky-note-line admin_profile_sidebar_icons"></i>{" "}
-            <p> Requests</p>
+            <p> Advertisement Requests</p>
           </div>
 
           <div className="mt-2">
@@ -111,7 +111,7 @@ function Adminsidebar() {
         
       </div>
       <div className="admin_profile_sidebar_padding ">
-        <Link to='' >
+        {/* <Link to='/viewsubscription' >
         <div className="admin_profile_sidebar_account_info">
           <div className="d-flex mt-2">
             <i class="ri-mail-volume-line admin_profile_sidebar_icons"></i>
@@ -123,7 +123,7 @@ function Adminsidebar() {
             <p></p>
           </div>
         </div>
-        </Link>
+        </Link> */}
         {/* <Link to='' >
         <div className="admin_profile_sidebar_account_info">
           <div className="d-flex mt-2">
