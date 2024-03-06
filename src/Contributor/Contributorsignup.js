@@ -54,7 +54,7 @@ useEffect(()=>{
           navigate("/contributerlogin")
         }
         else if (result.data.status == 409) {
-          alert(result.data.msg)
+          alert("You are already been registered")
         }
         else if(result.data.status==500){
           alert("some fields are missing")

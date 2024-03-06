@@ -46,7 +46,7 @@ function Readerpoliticspage({url}) {
     <div className='row' key={a._id}>
         
       <div className='col-md-5 readre_politics_image'style={{padding:"20px"}}>
-        <img src={`${url}/${a.image.filename}`} alt='images' width="400px" height="300px" />
+        <img src={`${url}/${a.image?.filename}`} alt='images' width="400px" height="300px" />
       </div>
       <div className='col-md-6 offset-md-1  reader_politics_text'>
       <h2>"{a.title}"</h2>
@@ -57,8 +57,8 @@ function Readerpoliticspage({url}) {
   <button type='submit' className='readmorebtn'>Read more</button>
 )}      </p>
         <div className='like-dislike-buttons'>
-              <button type='button' className='ri-thumb-up-line'> </button>
-              <button type='button' className='ri-thumb-down-line'> </button>
+              {/* <button type='button' className='ri-thumb-up-line'> </button>
+              <button type='button' className='ri-thumb-down-line'> </button> */}
               <button className='ri-user-line' id='reader_usename'>Rahul</button>
               <button className='ri-map-pin-line' id='reader_location'>{a.location}</button>
               <button className='ri-map-pin-time-line' id='reader_time'>{timeString}</button>

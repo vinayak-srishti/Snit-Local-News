@@ -5,6 +5,8 @@ import Readreabout from '../Reader/Readreabout'
 import Readerprivicay from '../Reader/Readerprivicay'
 import Allreports from './Allreports'
 import Viewsinglereport from './Viewsinglereport'
+import Moderatorviewcontribuorrequest from './Moderatorviewcontribuorrequest'
+import Viewsinglecontributor from "./Viewsinglecontributor"
 
 function Moderatormain({data}) {
   const url = "http://localhost:4004";
@@ -20,7 +22,12 @@ function Moderatormain({data}) {
           <Readerprivicay/>
       ):data=="allreports" ?(
         <Allreports url={url}/>
+      ):data=="contributerrequest" ?(
+        <Moderatorviewcontribuorrequest/>
+      ):data=="viewsinglecontributer"?(
+        <Viewsinglecontributor/>
       ):
+
         ""}
     </div>
   )

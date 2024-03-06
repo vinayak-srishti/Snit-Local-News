@@ -39,7 +39,7 @@ function Moderatorsidebar() {
 <div className="reader_profile_sidebar_account_info">
   <div className="d-flex mt-2 ">
     <i class="ri-git-pull-request-line reader_profile_sidebar_icons"></i>{" "}
-    <p> Requests</p>
+    <p>News Requests</p>
   </div>
 
   <div className="mt-2">
@@ -49,6 +49,22 @@ function Moderatorsidebar() {
 </Link>
 
 </div>
+<div className="reader_profile_sidebar_padding ">
+<Link to='/contributerrequest' >
+<div className="reader_profile_sidebar_account_info">
+  <div className="d-flex mt-2 ">
+    <i class="ri-git-pull-request-line reader_profile_sidebar_icons"></i>{" "}
+    <p>Contributor Requests</p>
+  </div>
+
+  <div className="mt-2">
+    <i class="ri-arrow-right-s-line reader_profile_sidebar_icons"></i>
+  </div>
+</div>
+</Link>
+
+</div>
+
 
 <div className="reader_profile_sidebar_padding ">
 <Link to='/allreports' >

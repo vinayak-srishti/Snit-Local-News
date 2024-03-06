@@ -18,6 +18,7 @@ function Allnewsviewone({url}) {
 
 
     const[data,setdata]=useState({ image: { filename: ''  }})
+    const[like,setlike]=useState({})
 
     const [showMenuModal, setShowMenuModal] = useState(false);
     const handleLoginButtonClick = () => {
@@ -35,18 +36,24 @@ function Allnewsviewone({url}) {
     const handleCommentsButtonClick = () => {
         setShowComments(!showComments); // Toggle the state
     };
-
+    const readerIds = localStorage.getItem('readerid');
+    console.log(readerIds+"hello readreid");
+    
 
     useEffect(()=>{
-        axiosInstance.post(`viewnewsById/${id.id}`)
+        axiosInstance.post(`viewnewsById/${id.id}`, {
+            readerid: readerIds,
+          })
         .then((res)=>{
             console.log(res);
-            setdata(res.data.data)
+            setdata(res.data.data);
+            setlike(res.data)
+
         })
         .catch((err)=>{
             console.log(err);
         })
-    },[])
+    },[like])
     // console.log(data.data.image.filename);
     
     const [latestAdds, setLatestAdds] = useState([]);
@@ -56,7 +63,7 @@ function Allnewsviewone({url}) {
         .then((res) => {
           console.log(res);
           setLatestAdds(res.data.msg);
-          console.log(res.data.msg);
+          // console.log(res.data.msg);
         })
         .catch((err) => {
           console.log(err);
@@ -68,6 +75,36 @@ function Allnewsviewone({url}) {
 console.log(data);
     const dateTime = new Date(data.date);
     const timeString = dateTime.toLocaleTimeString();
+
+//like and dislike functionality
+
+const [likeStatus, setLikeStatus] = useState(null);
+
+
+  const handleLike = async () => {
+    const newsId = id.id; 
+    // const readerId = readerIds;
+
+    try {
+      const response = await axiosInstance.post(`likeOrDislike/${newsId}`, {
+        readerid: readerIds,
+      });
+      // console.log(response);
+      if (response.status === 200) {
+        setLikeStatus(response.data.msg);
+      } else {
+        console.error(response.data);
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
+
+
+
+
+
+
 
   return (
     <div className='container reader_viewone'  style={{margin:"30px"}}>
@@ -110,9 +147,16 @@ console.log(data);
             {data.subcontent}
             </p>
         </div>
-        <div className='reader_viewone-likesdislikes '>
-          <button type='button' className='ri-thumb-up-line'> </button>
-          <button type='button' className='ri-thumb-down-line'> </button>
+        <div className='reader_viewone-likesdislikes ' >
+          
+          {/* <button type='button'  style={{border:"none"}} className='ri-thumb-up-line'onClick={handleLike}>{like.likecount} </button>
+          <button type='button'style={{border:"none"}} className='ri-thumb-down-line' onClick={handleLike}> </button> */}
+
+ {like.liked === true ? ( 
+        <button type='button' style={{border:"none"}} className='ri-thumb-up-line' onClick={handleLike}>{like.likecount}</button>
+   ) : ( 
+        <button type='button' style={{border:"none"}} className='ri-thumb-down-line' onClick={handleLike}></button>
+     )} 
           <button type='submit' className='ri-message-2-line' onClick={handleCommentsButtonClick}  style={{marginLeft:"40px",border:"none",width:"40px",height:"40px"}}></button>
           <button className='ri-user-line' id='reader_usename' style={{paddingLeft:"700px"}}> {data.contributorid?.firstname}</button>
           <button className='ri-map-pin-line' id='reader_location'>{data.location}</button>

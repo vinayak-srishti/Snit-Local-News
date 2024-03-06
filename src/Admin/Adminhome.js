@@ -11,6 +11,8 @@ import Adminprivacy from './Adminprivacy'
 import Adminviewcontributer from './Adminviewcontributer'
 import Adminviewsinglecontributer from './Adminviewsinglecontributer'
 import Adminaddrequest from './Adminaddrequest'
+import Addsubscription from './Addsubscription'
+import Viewsubscription from './Viewsubscription'
 const url = "http://localhost:4004";
 
 
@@ -36,6 +38,10 @@ function Adminhome({data}) {
           <Adminviewsinglecontributer/>
         ):data=='requests'?(
           <Adminaddrequest url={url}/>
+        ):data=='addsubscription'?(
+          <Addsubscription/>
+        ):data=='viewsubscription'?(
+          <Viewsubscription/>
         )
         :"" }
     </div>

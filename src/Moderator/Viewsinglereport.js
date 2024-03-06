@@ -143,8 +143,10 @@ function Viewsinglereport({url}) {
             </div>
 
             <div className='coontributor_button ' style={{ display: "flex" }}>
-                <button type='submit' className='btn btn-danger col-2' onClick={deletefn}>Delete Post</button>
-
+                {/* <button type='submit' className='btn btn-danger col-2' onClick={deletefn}>Delete Post</button> */}
+                {data.newsid &&
+                            <button type='submit' className='btn btn-danger col-2' onClick={deletefn}>Delete Post</button>
+                        }
             </div>
         </form>
     </div>
