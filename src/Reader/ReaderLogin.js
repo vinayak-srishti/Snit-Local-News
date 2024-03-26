@@ -46,7 +46,7 @@ function ReaderLogin() {
       <div className='container'>
         <div className='row reader_box'>
           <div className='col-sm-12'>
-            <h2 className='reader_login_title'>Login</h2>
+            <h2 className='reader_login_title'>Reader Login</h2>
           </div>
           <form className='reader_login_inp' onSubmit={submitfn}>
           <div className='col-sm-12 input_text'>

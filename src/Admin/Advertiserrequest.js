@@ -7,7 +7,7 @@ import img1 from "../Assets/rightarrow.png"
 
 
 
-function Advertiserrequest() {
+function Advertiserrequest({url}) {
     const[data,setdata]=useState([])
     useEffect(()=>{
         axiosInstance.post(`viewalladvertiserReqsForadmin`)
@@ -39,10 +39,13 @@ function Advertiserrequest() {
 
             <div className='row' style={{padding:"10px"}}>
                 <div className='admin_advertiser_request' style={{ display: 'flex' }} >
-                    <div>
-                    <h4>Company Name : {a.companyname} <span style={{paddingLeft:"40px"}}>Reg No:{a.regno}</span></h4>
+                    <div className='col-4'>
+                        <img src={`${url}/${a.image?.filename}`} alt='images' width="250px" height="100px"/>
+                    </div>
+                    <div className='col-8'>
+                    <h4> {a.companyname} <span style={{paddingLeft:"40px",fontFamily:"initial"}}>Reg No:{a.regno}</span></h4>
                     
-                    <p id='arrow'>Name:{a.firstname} {a.lastname}</p>
+                    <p id='arrow'>Owner Name:{a.firstname} {a.lastname}</p>
                     </div>
                     
                 </div>

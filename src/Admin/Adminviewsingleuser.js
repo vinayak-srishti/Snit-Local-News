@@ -24,7 +24,7 @@ function Adminviewsingleuser() {
     },[])
 const deletefn=((_id)=>{
     axiosInstance.post(`/readerdeletebyid/${_id}`)
-    .then((res)=>{
+    .then((res)=>{  
         if(res.data.status==200){
             alert("User deleted successfully")
             navigate("/admin_viewuser")

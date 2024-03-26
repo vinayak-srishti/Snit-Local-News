@@ -40,22 +40,41 @@ function Allnewsviewone({url}) {
     console.log(readerIds+"hello readreid");
     
 
-    useEffect(()=>{
+    // useEffect(()=>{
+    //     axiosInstance.post(`viewnewsById/${id.id}`, {
+    //         readerid: readerIds,
+    //       })
+    //     .then((res)=>{
+    //         console.log(res);
+    //         setdata(res.data.data);
+    //         setlike(res.data)
+    //         // setlike(prevArray => prevArray.filter(item => item._id !== id));
+
+    //     })
+    //     .catch((err)=>{
+    //         console.log(err);
+    //     })
+    // },[])
+    // console.log(data.data.image.filename);
+    const [initialFetchDone, setInitialFetchDone] = useState(false);
+
+useEffect(() => {
+    if (!initialFetchDone) {
         axiosInstance.post(`viewnewsById/${id.id}`, {
             readerid: readerIds,
-          })
-        .then((res)=>{
+        })
+        .then((res) => {
             console.log(res);
             setdata(res.data.data);
-            setlike(res.data)
-
+            setlike(res.data);
+            setInitialFetchDone(true); // Mark initial fetch as done
         })
-        .catch((err)=>{
+        .catch((err) => {
             console.log(err);
-        })
-    },[like])
-    // console.log(data.data.image.filename);
-    
+        });
+    }
+}, [initialFetchDone, id.id, readerIds]);
+
     const [latestAdds, setLatestAdds] = useState([]);
 
     useEffect(() => {
@@ -91,7 +110,15 @@ const [likeStatus, setLikeStatus] = useState(null);
       });
       // console.log(response);
       if (response.status === 200) {
-        setLikeStatus(response.data.msg);
+        // setLikeStatus(response.data.msg);
+        // setlike(response.data);
+        if (like.liked === true) {
+          // If currently liked, set liked to false and decrement like count
+          setlike({ ...like, liked: false, likecount: like.likecount - 1 });
+      } else {
+          // If currently not liked, set liked to true and increment like count
+          setlike({ ...like, liked: true, likecount: like.likecount + 1 });
+      }
       } else {
         console.error(response.data);
       }

@@ -3,7 +3,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import axiosInstance from "../BaseUrl";
 import img from "../Assets/rightarrow.png"
 
-function Viewsingleadvertiserreq() {
+function Viewsingleadvertiserreq({url}) {
   const id = useParams();
   const[data,setdata]=useState({})
 
@@ -58,6 +58,9 @@ const deletefn=((b)=>{
     <div className="container" >
     <Link to="/advertiser_request"><img src={img} alt="back" width="40px" height="40px"/></Link>
       <div className="row singlecontributer-main" style={{marginLeft:"350px"}}>
+        <div className="col-12">
+        <img src={`${url}/${data.image?.filename}`} alt="images" width="440px" height="200px" style={{padding:"20px"}}/>
+        </div>
         <div className="col-4">Name :</div>
         <div className="col-8">
           <input
@@ -91,12 +94,12 @@ const deletefn=((b)=>{
           value={data.city}
            />
         </div>{" "}
-        <div className="col-4">Nationality :</div>
+        {/* <div className="col-4">Nationality :</div>
         <div className="col-8">
           <input type="text"
            value={data.nationality}
             />
-        </div>{" "}
+        </div>{" "} */}
         <div className="col-4">Email :</div>
         <div className="col-8">
           <input type="text"

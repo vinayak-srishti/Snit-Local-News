@@ -12,10 +12,15 @@ function Readersignin() {
     const navigate = useNavigate()
     const onSubmit = (a) => {
         a.preventDefault();
+        if (!values.contact || !/^\d{10}$/.test(values.contact)) {
+            alert("Contact number must be a 10-digit number");
+            return;
+        }
         if (!/^\d{6}$/.test(values.pincode)) {
             alert("Pincode must have 6 digits");
             return;
           }
+
         axiosInstance.post(`/readersignup`, values)
             .then((res) => {
                 console.log(res);

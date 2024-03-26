@@ -10,6 +10,8 @@ import Viewsinglecontributor from "./Viewsinglecontributor"
 
 function Moderatormain({data}) {
   const url = "http://localhost:4004";
+  // const url="http://hybrid.srishticampus.in:4003/"
+
 
   return (
     <div style={{display:"flex"}}>
@@ -23,9 +25,9 @@ function Moderatormain({data}) {
       ):data=="allreports" ?(
         <Allreports url={url}/>
       ):data=="contributerrequest" ?(
-        <Moderatorviewcontribuorrequest/>
+        <Moderatorviewcontribuorrequest url={url}/>
       ):data=="viewsinglecontributer"?(
-        <Viewsinglecontributor/>
+        <Viewsinglecontributor url={url}/>
       ):
 
         ""}

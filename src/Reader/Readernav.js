@@ -15,7 +15,7 @@ function Readernav() {
 
 
             <form class="d-flex ms-5 user_nav_Search">
-              <input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search" />
+              {/* <input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search" /> */}
 
             </form>
 
@@ -29,13 +29,13 @@ function Readernav() {
 
 
                 <li class="nav-item">
-                  <a class="nav-link " href="/" >Home</a>
+                  <Link to="/" style={{textDecoration:"none"}}><a class="nav-link " >Home</a></Link>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/politicslogin">Politics</a>
+                 <Link to="/politicslogin" style={{textDecoration:"none"}}><a class="nav-link" >Politics</a></Link> 
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/sportslogin">Sports</a>
+                  <Link to="/sportslogin" style={{textDecoration:"none"}}><a class="nav-link">Sports</a></Link>
                 </li>
                 {/* <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -50,7 +50,7 @@ function Readernav() {
                   </ul>
                 </li> */}
                 <li class="nav-item">
-                  <a class="nav-link" href="/otherslogin">Others</a>
+                 <Link to="/otherslogin" style={{textDecoration:"none"}} ><a class="nav-link" >Others</a></Link>
                 </li>
 
                 {/* <li class="nav-item dropdown">

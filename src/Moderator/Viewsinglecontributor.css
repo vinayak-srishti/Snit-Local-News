@@ -1,6 +1,6 @@
     .singlecontributer-main{
         width: 500px;
-        height: 600px;
+        max-height: 800px;
         background-color: aquamarine;
         margin: 20px;
         margin-left: 200px;
@@ -15,4 +15,5 @@
         height: 40px;
         border: 2px solid black;
         border-radius: 12px;
+        margin: 5px;
     }

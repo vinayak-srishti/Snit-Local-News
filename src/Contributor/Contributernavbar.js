@@ -34,7 +34,7 @@ function Contributernavbar() {
               <a class="nav-link " href="/contributer_home" >Home</a>
             </li> */}
             <li class="nav-item">
-              <a class="nav-link" href="/contributerviewnewsbyid">View Uploaded News</a>
+            <Link to="/contributerviewnewsbyid"> <a class="nav-link" >View Uploaded News</a></Link> 
             </li>
             {/* <li class="nav-item">
               <a class="nav-link" href="">Sports</a>
