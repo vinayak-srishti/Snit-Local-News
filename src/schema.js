@@ -21,7 +21,7 @@ export const readerRegSchema  = yup.object().shape({
     confirmpassword: yup.string().oneOf([yup.ref("password"), null], "Password mismatch").required("Required"),
     // dob: yup.date().required("Required"),
     // district: yup.string().min(2,"Enter minimum 2 characters").required("Required"),
-    // image: yup.object().required("Required"),     
+    //image: yup.object().required("Required"),     
 })
 
 
@@ -42,7 +42,7 @@ export const contributerRegSchema  = yup.object().shape({
     confirmpassword: yup.string().oneOf([yup.ref("password"), null], "Password mismatch").required("Required"),
     // dob: yup.date().required("Required"),
     // district: yup.string().min(2,"Enter minimum 2 characters").required("Required"),
-    // image: yup.object().required("Required"),     
+     image: yup.object().required("Required"),     
 })
 
 export const advertiserRegSchema  = yup.object().shape({
@@ -61,6 +61,6 @@ export const advertiserRegSchema  = yup.object().shape({
     confirmpassword: yup.string().oneOf([yup.ref("password"), null], "Password mismatch").required("Required"),
     // dob: yup.date().required("Required"),
     // district: yup.string().min(2,"Enter minimum 2 characters").required("Required"),
-    // image: yup.object().required("Required"),     
+     image: yup.object().required("Required"),     
 })
 

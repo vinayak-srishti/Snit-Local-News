@@ -10,6 +10,8 @@ import Savednews from './Savednews'
 
 function Readerprofile({data}) {
   const url = "http://localhost:4004";
+  // const url="http://hybrid.srishticampus.in:4003/"
+
 
   return (
     <div className='container_readerprofile'>

@@ -78,10 +78,12 @@ import Viewsingleadvertiserreq from "./Admin/Viewsingleadvertiserreq";
 function App() {
   //local
   const url = "http://localhost:4004";
-  // const url="http://hybrid.srishticampus.in:4003/local_news_aggregator/upload"
+  // const url="http://hybrid.srishticampus.in:4003/"
 
   return (
-    <BrowserRouter basename="/local_news_aggregator">
+    <BrowserRouter 
+    // basename="/local_news_aggregator"
+    >
       <div>
         <Routes>
           {/* Readrer */}
@@ -188,12 +190,12 @@ function App() {
           <Route path="/admin_viewsinglecontributer/:id" element={[<Advertiserloginnav />,<Adminhome data='viewsinglecontributer'/>,<Footer/>]}/>
 
 
-          <Route path="/advertiser_request" element={[<Advertiserloginnav />,<Advertiserrequest/>,<Footer/>]}/>
+          <Route path="/advertiser_request" element={[<Advertiserloginnav />,<Advertiserrequest url={url}/>,<Footer/>]}/>
           <Route path="/addrequests" element={[<Advertiserloginnav />,<Adminhome data="requests" url={url}/>,]}/>
           <Route path="/viewsingleaddrequests/:id" element={[<Advertiserloginnav />,<Adminviewsinglerequest  url={url}/>,]}/>
           <Route path="/addsubscription" element={[<Advertiserloginnav />,<Adminhome data='addsubscription'/>,<Footer/>]}/>
           <Route path="/viewsubscription" element={[<Advertiserloginnav />,<Adminhome data='viewsubscription'/>,<Footer/>]}/>
-          <Route path="/Viewsingleadvertiserreq/:id" element={[<Advertiserloginnav />,<Viewsingleadvertiserreq/>,<Footer/>]}/>
+          <Route path="/Viewsingleadvertiserreq/:id" element={[<Advertiserloginnav />,<Viewsingleadvertiserreq url={url}/>,<Footer/>]}/>
 
 
 

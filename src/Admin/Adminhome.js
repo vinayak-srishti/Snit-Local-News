@@ -14,6 +14,8 @@ import Adminaddrequest from './Adminaddrequest'
 import Addsubscription from './Addsubscription'
 import Viewsubscription from './Viewsubscription'
 const url = "http://localhost:4004";
+// const url="http://hybrid.srishticampus.in:4003/"
+
 
 
 function Adminhome({data}) {

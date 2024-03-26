@@ -3,9 +3,8 @@ import "./Viewsinglecontributor.css";
 import { useNavigate, useParams } from "react-router-dom";
 import axiosInstance from "../BaseUrl";
 
-function Viewsinglecontributor() {
+function Viewsinglecontributor({url}) {
   const id=useParams()
-  console.log(id);
   const[data,setdata]=useState({})
 
   useEffect(()=>{
@@ -59,6 +58,10 @@ const navigate=useNavigate()
     <div className="col-8">
       <div className="container">
         <div className="row singlecontributer-main">
+          <div className="col-12" style={{padding:"20px"}}>
+            <img src={`${url}/${data.image?.filename}`} alt="profile image" width="425px" height="200px" style={{borderRadius:"12px"}}/>
+
+          </div>
           <div className="col-4">Name :</div>
           <div className="col-8">
             <input type="text" value={`${data.firstname} ${data.lastname}`} />

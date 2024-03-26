@@ -39,7 +39,11 @@ function Advertisersignin() {
 const navigate=useNavigate()
     const onSubmit=(a)=>{
         a.preventDefault()
-        axiosInstance.post(`/advertisersignup`,values)
+        axiosInstance.post(`/advertisersignup`,values,{
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        })
     
         .then(result => {
             console.log(result);
@@ -77,6 +81,7 @@ const navigate=useNavigate()
         state: '',
         email: '',
         contact: '',
+        image:'',
         password: '',
         confirmpassword: '',
       },
@@ -84,6 +89,10 @@ const navigate=useNavigate()
       validateOnChange: true,
       onSubmit,
     });
+    const handleImageChange = (event) => {
+      setFieldValue('image', event.currentTarget.files[0]);
+    };
+
 
     return (
         <div>
@@ -170,6 +179,18 @@ const navigate=useNavigate()
                       <p className="error">{errors.contact}</p>
                     )}
                                         </div>
+                                        <div className='col-6 pb-3 contributor_signin_input' style={{textAlign:"center",color:"red"}}>
+                    Upload A Valid Certificate:
+                  </div>
+                  <div className='col-6 pb-3 contributor_signin_input'>
+                  <input
+                    type="file"
+                    placeholder="Enter the street name"
+                    className="w-100"
+                    name="image"
+                     onChange={handleImageChange} onBlur={handleBlur} required
+                  />
+                  </div>
                                         <div className='col-6 pb-3 contributor_signin_input '>
                                             <input type='password' placeholder='Password' name='password' value={values.password} onChange={handleChange} onBlur={handleBlur} required />
                                             {errors.password && touched.password && (

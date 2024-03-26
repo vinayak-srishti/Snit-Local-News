@@ -14,7 +14,7 @@ const[data,setdata]=useState({})
 useEffect(()=>{
   axiosInstance.post(`/readerviewbyid/${storedReaderId}`,values)
   .then((res)=>{
-    const readerData = res.data.msg; // Assuming res.data.msg contains reader data
+    const readerData = res.data.msg; 
       // Set the initial values for the form fields
       setFieldValue('firstname', readerData.firstname);
       setFieldValue('lastname', readerData.lastname);
@@ -28,8 +28,7 @@ useEffect(()=>{
       setFieldValue('email', readerData.email);
       setFieldValue('contact', readerData.contact);
 
-      // Other fields...
-
+   
       console.log(readerData);
   })
   .catch((err)=>{
@@ -38,15 +37,21 @@ useEffect(()=>{
 },[storedReaderId])
 
 
-
   const navigate=useNavigate()
   const onSubmit = (a) => {
     a.preventDefault();
+    console.log(values);
+
     if (!/^\d{6}$/.test(values.pincode)) {
       alert("Pincode must have 6 digits");
       return;
     }
-    axiosInstance.post(`/contributersignup`, values)
+    axiosInstance.post(`/contributersignup`, values,{
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    })
+    
       .then(result => {
         console.log(result);
         if (result.data.status == 200) {
@@ -82,6 +87,7 @@ useEffect(()=>{
         nationality: '',
         email: '',
         contact: '',
+        image:'',
         password: '',
         confirmpassword: '',
       },
@@ -89,6 +95,10 @@ useEffect(()=>{
       validateOnChange: true,
       onSubmit,
     });
+    const handleImageChange = (event) => {
+      setFieldValue('image', event.currentTarget.files[0]);
+    };
+
 // console.log(data.firstname);
   return (
     <div>
@@ -190,6 +200,18 @@ useEffect(()=>{
                     {errors.contact && touched.contact && (
                       <p className="error">{errors.contact}</p>
                     )}
+                  </div>
+                  <div className='col-6 pb-3 contributor_signin_input' style={{textAlign:"center",color:"red"}}>
+                    Upload A Valid Certificate:
+                  </div>
+                  <div className='col-6 pb-3 contributor_signin_input'>
+                  <input
+                    type="file"
+                    placeholder="Enter the street name"
+                    className="w-100"
+                    name="image"
+                    onChange={handleImageChange} onBlur={handleBlur} required
+                  />
                   </div>
                   <div className='col-6 pb-3 contributor_signin_input '>
                     <input type='password' placeholder='Password' name='password' value={values.password} onChange={handleChange} onBlur={handleBlur} required />

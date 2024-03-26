@@ -4,7 +4,7 @@ import axiosInstance from '../BaseUrl'
 import { Link, useLocation } from 'react-router-dom';
 
 function Readersports() {
-  const url={baseurl:"http://localhost:4004"}
+  const url={baseurl:"http://hybrid.srishticampus.in:4003/"}
   const [category, setCategory] = useState('Sports');
   const [newsData, setNewsData] = useState([]);
 
