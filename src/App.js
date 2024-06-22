@@ -82,10 +82,11 @@ function App() {
 
   return (
     <BrowserRouter 
-    // basename="/local_news_aggregator"
+    basename="/local_news_aggregator"
     >
       <div>
         <Routes>
+        {/* //updated new file */}
           {/* Readrer */}
           <Route path="/" element={[<Readernav />, <Readerhomecarousle /> ,<Readercarousel2 url={url}/>,<Readerhome3 url={url}/>,<Footer/>]} />
           <Route path="/readersignin" element={[<Readernavonlogin />, <Readersignin />]} />
@@ -109,20 +110,9 @@ function App() {
           <Route path="/readerpolitics" element={[<Readernavafterlogin/>,<Readerpoliticspage  url={url} />,<Footer/>]} />
           <Route path="/readersports" element={[<Readernavafterlogin/>,<Readersports url={url}/>,<Footer/>]}/>
           <Route path="/others" element={[<Readernavafterlogin />,<Others url={url}/>,<Footer/>]}/>
-          {/* <Route path="/viewonenewssports/:id" element={[<Readernavafterlogin/>,<Readerviewonenews/>,<Footer/>]}/> */}
-          {/* <Route path="/viewonepolitics/:id" element={[<Readernavafterlogin/>,<Politicsviewone url={url}/>,<Footer/>]}/> */}
-          <Route path="/viewallnewsbyid/:id" element={[<Readernavafterlogin/>,<Allnewsviewone url={url}/>,<Footer/>]}/>
-          <Route path="/menu" element={<Menu/>}/>
-          <Route path="/comments" element={<Comments/>}/>
-          <Route path="/report" element={<Menu data="report"/>}/>
-
-          <Route path="/savednews" element={[<Readernavafterlogin />,<Readerprofile data="savednews"/>]}/>
 
           <Route path="/readerprofile_accountinfo" element={[<Readernavafterlogin />, <Readerprofile data='account' />,<Footer/>]} />
           <Route path="/reader_pageroles" element={[<Readernavafterlogin />, <Readerprofile data='pagerole' />,<Footer/>]} />
-          <Route path="/reader_editprofile" element={[<Readernavafterlogin />, <Readerprofile data='editprofile' />,<Footer/>]} />
-          <Route path="/reader_privacy" element={[<Readernavafterlogin/>,<Readerprofile data='readerprivacy'/>,<Footer/>]}/>
-          <Route path="/reader_about" element={[<Readernavafterlogin/>,<Readerprofile data='readerabout'/>,<Footer/>]}/>
           
           { /*Contributor*/}
           <Route path="/contributorsignup" element={<Contributorsignup />} />
@@ -134,13 +124,8 @@ function App() {
           <Route path="/contributer_home" element={[<Contributernavbar />,<Others url={url}/>,<Footer/>]}/>
           <Route path="/contributer_sidebar" element={<Contributersidebar/>}/>
           <Route path="/contributer_viewprofile" element={[<Contributernavbar />,<Contributerprofile data='contributerviewprofile'/>,<Footer/>]}/>
-          <Route path="/contributer_editprofile" element={[<Contributernavbar />,<Contributerprofile data='contributereditprofile'/>,<Footer/>]}/>
-          <Route path="/about" element={[<Contributernavbar />,<Contributerprofile data='about'/>,<Footer/>]}/>
-          <Route path="/privacy" element={[<Contributernavbar />,<Contributerprofile data='privacy'/>,<Footer/>]}/>
-
           <Route path="/contributer_addnews" element={[<Contributernavbar />,<Contributeraddnews/>,<Footer/>]}/>
           <Route path="/contributerviewnewsbyid" element={[<Contributernavbar />,<Contributerviewmynews url={url}/>,<Footer/>]}/>
-          <Route path="/contributerdltupdtnews/:id" element={[<Contributernavbar />,<Contributerdltupdtnews url={url}/>,<Footer/>]}/>
 
 
           {/* Advertiser */}
@@ -151,25 +136,15 @@ function App() {
           <Route path="/advertiser_sidebar" element={[<Advertiserloginnav/>,<Advertisersidebar/>,<Footer/>]}/>
           <Route path="/advertiser_viewuploads" element={[<Advertiserloginnav/>,<Advertisermain data="viewpro"/>,<Footer/>]}/>
           <Route path="/advertiser_viewaccount" element={[<Advertiserloginnav/>,<Advertisermain data="viewaccountmy"/>,<Footer/>]}/>
-          <Route path="/advertiser_editprofile" element={[<Advertiserloginnav/>,<Advertisermain data="advertiser_editprofile"/>,<Footer/>]}/>
-          <Route path="/advertiser_about" element={[<Advertiserloginnav/>,<Advertisermain data="advertiser_about"/>,<Footer/>]}/>
-          <Route path="/advertiser_privacy" element={[<Advertiserloginnav/>,<Advertisermain data="advertiser_privacy"/>,<Footer/>]}/>
-
-
           <Route path="/advertiser_upload" element={[<Advertiserloginnav/>,<Advertiserupload/>,<Footer/>]}/>
-          <Route path="/addsviewbyid/:id" element={[<Advertiserloginnav/>,<Advertisementviewsingleadds url={url}/>,<Footer/>]}/>
 
 
           {/* moderator */}
           <Route path="/moderatorlogin" element={[<Adminlognav/>,<ModeratorLogin/>,<Footer/>]}/>
           <Route path="/moderatorsidebar" element={[<Advertiserloginnav />,<Moderatorsidebar/>,<Footer/>]}/>
           <Route path="/moderatorrequest" element={[<Advertiserloginnav />,<Moderatormain data="request"/>,<Footer/>]}/>
-          {/* <Route path="/req" element={<Moderatorrequest url={url}/>}/> */}
           <Route path="/moderator_requests" element={[<Advertiserloginnav />,<Moderatormain data="requestm"/>,<Footer/>]}/>
           <Route path="/moderator_singlerequest/:id" element={[<Advertiserloginnav />,<Moderatorsinglerequest url={url}/>,<Footer/>]}/>
-          <Route path="/aboutmod" element={[<Advertiserloginnav />,<Moderatormain data='about'/>,<Footer/>]}/>
-          <Route path="/privacymod" element={[<Advertiserloginnav />,<Moderatormain data='privacy'/>,<Footer/>]}/>
-          <Route path="/allreports" element={[<Advertiserloginnav />,<Moderatormain data='allreports'/>,<Footer/>]}/>
           <Route path="/singlerequest/:id" element={[<Advertiserloginnav />,<Viewsinglereport url={url}/>,<Footer/>]}/>
           <Route path="/contributerrequest" element={[<Advertiserloginnav />,<Moderatormain data='contributerrequest'/>,<Footer/>]}/>
           <Route path="/viewsinglecontributer/:id" element={[<Advertiserloginnav />,<Moderatormain data='viewsinglecontributer'/>,<Footer/>]}/>
@@ -181,13 +156,10 @@ function App() {
           <Route path="/admin" element={[<Adminlognav/>,<AdminLogin/>,<Footer/>]}/>
           <Route path="/admin_sidebar" element={[<Advertiserloginnav />,<Adminsidebar/>]}/>
           <Route path="/admin_viewuser" element={[<Advertiserloginnav />,<Adminhome data="viewuser"/>,<Footer/>]}/>
-          <Route path="/admin_viewsingleuser/:id" element={[<Advertiserloginnav />,<Adminhome data="viewsingleuser"/>,<Footer/>]}/>
           <Route path="/admin_dashboard" element={[<Advertiserloginnav />,<Adminhome data='admindashboard'/>,<Footer/>]}/>
           <Route path="/admin_viewadvertiser" element={[<Advertiserloginnav />,<Adminhome data='viewadvertiser'/>,<Footer/>]}/>
-          <Route path="/viewsingleadvertiser/:id" element={[<Advertiserloginnav />,<Adminhome data='viewsingleadvertiser'/>,<Footer/>]}/>
           <Route path="/adminprivacy" element={[<Advertiserloginnav />,<Adminhome data='adminprivacy'/>,<Footer/>]}/>
           <Route path="/adminviewcontributer" element={[<Advertiserloginnav />,<Adminhome data='viewcontributer'/>,<Footer/>]}/>
-          <Route path="/admin_viewsinglecontributer/:id" element={[<Advertiserloginnav />,<Adminhome data='viewsinglecontributer'/>,<Footer/>]}/>
 
 
           <Route path="/advertiser_request" element={[<Advertiserloginnav />,<Advertiserrequest url={url}/>,<Footer/>]}/>
@@ -198,11 +170,6 @@ function App() {
           <Route path="/Viewsingleadvertiserreq/:id" element={[<Advertiserloginnav />,<Viewsingleadvertiserreq url={url}/>,<Footer/>]}/>
 
 
-
-
-          {/* 
-              <Route path="/oneone" element={<HomePage/>}/>
-              <Route path="/nav" element={<Navbar/>}/> */}
         </Routes>
       </div>
     </BrowserRouter>

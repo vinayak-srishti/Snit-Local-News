@@ -30,7 +30,7 @@ function Adminviewcontributer() {
           <p className='col-2'>Name</p>
           <p className='col-3'>Email</p>
           <p className='col-2'>Contact</p>
-          <p className='col-4'>Loction</p>
+          <p className='col-4'>Location</p>
           </div>
         </div>
         </div>
