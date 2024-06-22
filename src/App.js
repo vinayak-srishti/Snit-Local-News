@@ -86,7 +86,7 @@ function App() {
     >
       <div>
         <Routes>
-        {/* //updated new file */}
+        {/* //updated new filess */}
           {/* Readrer */}
           <Route path="/" element={[<Readernav />, <Readerhomecarousle /> ,<Readercarousel2 url={url}/>,<Readerhome3 url={url}/>,<Footer/>]} />
           <Route path="/readersignin" element={[<Readernavonlogin />, <Readersignin />]} />
